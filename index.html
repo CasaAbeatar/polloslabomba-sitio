@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pollos La Bomba</title>
+<meta name="description" content="Pollos La Bomba y Papeá, Horquetas de Sarapiquí. Abrimos el sábado 14 de noviembre.">
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Concepto: pantalla partida. Izquierda Pollos La Bomba (en construcción), derecha Papeá. */
+:root{--bg:#171212;--fg:#FFFFFF;--gold:#F3A62C;--gold-ink:#171212;--red:#B81622;--red-ink:#FFFFFF;--left:#171212;--left-fg:#FFFFFF;--bar:#0E0A0A;--bar-fg:#F6EFE6;--display:'Bowlby One','Arial Black',sans-serif;--body:'Figtree',system-ui,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark}}
+:root[data-theme="dark"]{color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.5;display:flex;flex-direction:column}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.split{flex:1 1 auto;display:grid;grid-template-columns:1fr 1fr;min-height:0}
+.half{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:48px 20px;min-width:0}
+.left{background:var(--left);color:var(--left-fg)}
+.right{background:var(--red);color:var(--red-ink);text-decoration:none}
+.tag{font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.left .tag{color:var(--gold)}
+.right .tag{background:var(--gold);color:var(--gold-ink);padding:6px 14px;border-radius:999px}
+h1,h2{font-family:var(--display);font-weight:400;margin:0;line-height:.98;text-wrap:balance}
+.left h1{font-size:clamp(40px,8vw,84px)}
+.right h2{font-size:clamp(56px,11vw,120px)}
+.lema{font-size:clamp(18px,2.4vw,24px);font-weight:700;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;border-radius:12px;font-weight:700;font-size:17px;font-family:var(--body);text-decoration:none;border:2px solid transparent}
+.right .btn{background:var(--gold);color:var(--gold-ink)}
+.right:hover .btn,.right:focus-visible .btn{background:var(--red-ink);}
+.btn[aria-disabled="true"]{border-color:var(--left-fg);color:var(--left-fg);opacity:.75;cursor:not-allowed;background:transparent}
+.soon{margin:0;font-size:15px;opacity:.8}
+.bar{background:var(--bar);color:var(--bar-fg);font-size:14px;font-weight:700;text-align:center;padding:12px 20px}
+@media (max-width:700px){.split{grid-template-columns:1fr;grid-auto-rows:minmax(50svh,auto)}.half{padding:40px 20px}}
+</style>
+<main class="split">
+<section class="half left" aria-labelledby="t-pollos">
+<span class="tag">Horquetas de Sarapiquí</span>
+<h1 id="t-pollos">Pollos La Bomba</h1>
+<p class="lema">Buen viaje, buen camino y buen pollo.</p>
+<span class="btn" role="link" aria-disabled="true">Muy pronto</span>
+<p class="soon">Estamos armando esta página.</p>
+</section>
+<a class="half right" href="papea/index.html" aria-labelledby="t-papea">
+<span class="tag">Nuevo</span>
+<h2 id="t-papea">Papeá</h2>
+<p class="lema">Pura papa, pura vida.</p>
+<span class="btn">Entrar</span>
+</a>
+</main>
+<div class="bar">Abrimos el sábado 14 de noviembre. Todos los días de 10 a. m. a 10 p. m. Junto a Soda La Bomba.</div>
+
+</body>
+</html>
