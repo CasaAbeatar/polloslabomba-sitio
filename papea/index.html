@@ -3,20 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Papea Pollos La Bomba</title>
-<meta name="description" content="Pollos La Bomba y Papea, Horquetas de Sarapiquí. Abrimos el sábado 14 de noviembre.">
+<title>Papea, papas fritas de Pollos La Bomba en Horquetas de Sarapiquí</title>
+<meta name="description" content="Papea, las papas fritas de Pollos La Bomba, en Horquetas de Sarapiquí: cono, banderilla y Caja Bomba, para llevar y Express. Abrimos el sábado 14 de noviembre.">
+<meta name="theme-color" content="#171212">
+<link rel="canonical" href="https://www.polloslabomba.com/papea/">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../img/favicon-48.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CR">
+<meta property="og:site_name" content="Pollos La Bomba">
+<meta property="og:title" content="Papea, papas fritas de Pollos La Bomba">
+<meta property="og:description" content="Papas fritas para llevar y Express en Horquetas de Sarapiquí. Abrimos el sábado 14 de noviembre.">
+<meta property="og:url" content="https://www.polloslabomba.com/papea/">
+<meta property="og:image" content="https://www.polloslabomba.com/img/og-papea.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Papea, de Pollos La Bomba. Papas fritas para llevar y Express en Horquetas de Sarapiquí.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Papea, de Pollos La Bomba","url":"https://www.polloslabomba.com/papea/","image":"https://www.polloslabomba.com/img/og-papea.png","description":"Papas fritas en cono, banderilla y Caja Bomba, para llevar y Express, en Horquetas de Sarapiquí.","servesCuisine":["Papas fritas","Comida rápida"],"parentOrganization":{"@type":"Organization","name":"Pollos La Bomba","url":"https://www.polloslabomba.com/"},"hasMap":"https://www.google.com/maps/search/?api=1&query=10.333714181537344,-83.95064152587013","geo":{"@type":"GeoCoordinates","latitude":10.333714181537344,"longitude":-83.95064152587013},"address":{"@type":"PostalAddress","streetAddress":"Frente a Soda La Bomba y Gasolinera JyJ","addressLocality":"Horquetas de Sarapiquí","addressRegion":"Heredia","addressCountry":"CR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"22:00","validFrom":"2026-11-14"}],"hasMenu":"https://www.polloslabomba.com/papea/#menu"}
+</script>
 </head>
 <body>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 /* Concepto: sitio de una página con cabecera fija, menú por pestañas y armador de pedido Express. Rojo gasolinera, dorado, negro. */
 :root{
   --bg:#FFFFFF; --fg:#171212; --muted:#4A3F3F; --line:#E6DDD3;
   --red:#B81622; --red-ink:#FFFFFF; --gold:#F3A62C; --gold-ink:#171212;
   --ink:#171212; --ink-fg:#FFFFFF; --soft:#FBF4EA;
-  --display:'Bowlby One','Arial Black',sans-serif; --body:'Figtree',system-ui,sans-serif;
+  --display:'Figtree',system-ui,sans-serif; --body:'Figtree',system-ui,sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#141010; --fg:#F6EFE6; --muted:#CDBFB3; --line:#3A2F2F; --red:#D9323E; --soft:#211A1A; --ink:#000000; color-scheme:dark}}
@@ -26,20 +46,36 @@
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.5}
 a{color:inherit}
-h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
+h1,h2,h3{font-family:var(--display);font-weight:800;margin:0;text-wrap:balance;line-height:1.05}
+h1,h2{text-transform:uppercase;letter-spacing:.01em}
 p{margin:0}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .wrap{width:100%;max-width:1100px;margin-inline:auto;padding-inline:20px}
 .sec{padding-block:64px}
 
+/* salto al contenido y barra fija de pedido en el celular */
+.skip{position:absolute;left:8px;top:-60px;z-index:20;background:var(--gold);color:var(--gold-ink);font-weight:700;padding:12px 18px;border-radius:10px}
+.skip:focus{top:8px}
+.dock{display:none}
+@media (max-width:640px){
+  .dock{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--ink-fg)}
+  .dock .btn{flex:1;min-height:48px;padding:0 12px}
+  .dock.off{display:none}
+  body{padding-bottom:72px}
+}
 /* cabecera */
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--ink);color:var(--ink-fg)}
-header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 16px;padding-block:6px}
-.logo{font-family:var(--display);font-size:24px;color:var(--gold);text-decoration:none;min-height:44px;display:flex;align-items:center}
+header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;padding-block:6px}
 nav{display:flex;flex-wrap:wrap;align-items:center;gap:2px}
 nav a,.lang button{min-height:44px;display:inline-flex;align-items:center;padding:0 12px;font-weight:700;font-size:15px;text-decoration:none;color:inherit;border-radius:8px}
 nav a:hover{background:rgba(255,255,255,.12)}
-.lang{display:flex;gap:6px;margin-left:8px}
+/* selector de marcas: siempre visible, para pasar de Pollos La Bomba a Papea */
+.brands{order:1;gap:0;border:2px solid var(--ink-fg);border-radius:10px;overflow:hidden}
+.brands a{border-radius:0;padding:0 16px}
+.brands a[aria-current="page"]{background:var(--gold);color:var(--gold-ink)}
+nav.main{order:2;margin-left:auto}
+.lang{order:3;display:flex;gap:6px}
+@media (max-width:640px){nav.main{order:4;flex-basis:100%;margin-left:0}.lang{margin-left:auto}}
 .lang button{font-family:var(--body);background:transparent;border:2px solid var(--ink-fg);cursor:pointer;min-width:48px;justify-content:center}
 .lang button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
 
@@ -48,13 +84,14 @@ nav a:hover{background:rgba(255,255,255,.12)}
 .hero .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;padding-block:64px}
 .hero .txt{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px}
 .chip{align-self:flex-start;background:var(--gold);color:var(--gold-ink);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border-radius:999px}
-.hero h1{font-size:clamp(64px,13vw,120px);line-height:.95}
+.hero h1{font-size:clamp(64px,14vw,132px);line-height:.92}
 .hero .lema{font-size:clamp(22px,4vw,30px);font-weight:700;line-height:1.2}
 .hero .sub{font-size:18px;max-width:520px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:12px;font-weight:700;font-size:17px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--body)}
 .btn.gold{background:var(--gold);color:var(--gold-ink)}
-.btn.line{border-color:currentColor;color:inherit}
+.btn.line{border-color:currentColor;color:inherit;background:transparent}
+.btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed}
 .ph{flex:0 1 300px;width:100%;max-width:300px;aspect-ratio:1/1;border:3px dashed var(--gold);border-radius:20px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;padding:16px;line-height:1.3}
 .facts{background:var(--ink);color:var(--ink-fg)}
 .facts .wrap{display:flex;flex-wrap:wrap;gap:8px 32px;padding-block:16px;font-weight:700;font-size:15px}
@@ -98,23 +135,26 @@ textarea{min-height:130px;resize:vertical}
 .where .rev{color:var(--red)}
 footer{background:var(--red);color:var(--red-ink)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding-block:28px;font-size:14px}
-footer b{font-family:var(--display);font-weight:400;font-size:22px}
+footer b{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 
+<a class="skip" href="#menu" data-i18n="skip">Saltar al menú</a>
 <header class="top">
 <div class="wrap">
-<a class="logo" href="#inicio">PAPEA</a>
-<a class="logo" style="font-family:var(--body);font-size:14px;color:inherit;text-decoration:underline" href="../index.html" data-i18n="back">Pollos La Bomba</a>
-<nav aria-label="Principal">
+<nav class="brands" aria-label="Marcas">
+<a href="../index.html">Pollos La Bomba</a>
+<a href="#inicio" aria-current="page">Papea</a>
+</nav>
+<nav class="main" aria-label="Principal">
 <a href="#menu" data-i18n="nav_menu">Menú</a>
 <a href="#express" data-i18n="nav_express">Express</a>
 <a href="#donde" data-i18n="nav_donde">Dónde</a>
+</nav>
 <div class="lang" role="group" aria-label="Idioma">
 <button type="button" id="b-es" aria-pressed="true">ES</button>
 <button type="button" id="b-en" aria-pressed="false">EN</button>
 </div>
-</nav>
 </div>
 </header>
 
@@ -137,7 +177,7 @@ footer b{font-family:var(--display);font-weight:400;font-size:22px}
 <div class="facts"><div class="wrap">
 <span data-i18n="f1">Todos los días de 10 a. m. a 10 p. m.</span>
 <span data-i18n="f2">Para llevar y Express</span>
-<span data-i18n="f3">Horquetas de Sarapiquí, junto a Soda La Bomba</span>
+<span data-i18n="f3">Horquetas de Sarapiquí, frente a Soda La Bomba</span>
 </div></div>
 
 <section class="sec" id="menu" aria-labelledby="h-menu">
@@ -158,13 +198,14 @@ footer b{font-family:var(--display);font-weight:400;font-size:22px}
 <h2 class="t" id="h-exp">Llama y llega la Bomba.</h2>
 <div class="cols">
 <div>
-<p data-i18n="exp_p">Arma tu pedido aquí, copia el mensaje y mándalo por WhatsApp. Solo para llevar y Express, sin mesas.</p>
+<p data-i18n="exp_p">Arma tu pedido aquí y envíalo por WhatsApp. Solo para llevar y Express, sin mesas.</p>
 <ul>
 <li data-i18n="exp_l1">Zona de entrega: [radio de entrega]</li>
 <li data-i18n="exp_l2">Paga por SINPE Móvil: [número SINPE]</li>
 <li data-i18n="exp_l3">WhatsApp: [número de WhatsApp]</li>
 <li data-i18n="exp_l4">Express no incluye bebidas con licor.</li>
 </ul>
+<p style="margin-top:20px"><a class="btn line" id="call" href="tel:+50672777303" data-i18n="call">Llamar</a></p>
 </div>
 <form class="order" id="order" autocomplete="off">
 <h3 data-i18n="o_t">Tu pedido</h3>
@@ -179,9 +220,10 @@ footer b{font-family:var(--display);font-weight:400;font-size:22px}
 <input type="text" id="o-addr" placeholder=""></label>
 <label for="o-msg"><span data-i18n="o_msg">Mensaje listo para enviar</span>
 <textarea id="o-msg" readonly></textarea></label>
-<button type="button" class="btn gold" id="copy" data-i18n="o_copy">Copiar pedido</button>
+<a class="btn gold" id="wa" href="#" target="_blank" rel="noopener" data-i18n="o_wa">Enviar por WhatsApp</a>
+<button type="button" class="btn line" id="copy" data-i18n="o_copy">Copiar pedido</button>
 <p class="ok" id="ok" role="status"></p>
-<p class="hint" data-i18n="o_hint">Los precios y el total se confirman por WhatsApp.</p>
+<p class="hint" data-i18n="o_hint">Se abre WhatsApp con tu pedido listo. Los precios y el total se confirman por WhatsApp.</p>
 </form>
 </div>
 </div>
@@ -191,8 +233,9 @@ footer b{font-family:var(--display);font-weight:400;font-size:22px}
 <div class="wrap where">
 <div style="display:flex;flex-direction:column;gap:10px">
 <h2 id="h-donde" data-i18n="w_t">Dónde</h2>
-<p data-i18n="w_p">Horquetas de Sarapiquí, junto a Soda La Bomba y la estación de servicio JJ.</p>
+<p data-i18n="w_p">Frente a Soda La Bomba y la Gasolinera JyJ, Horquetas de Sarapiquí.</p>
 <p style="font-weight:700" data-i18n="w_h">Todos los días de 10 a. m. a 10 p. m.</p>
+<p><a class="btn gold" id="map" href="https://www.google.com/maps/search/?api=1&query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener" data-i18n="w_map">Cómo llegar</a></p>
 </div>
 <div style="display:flex;flex-direction:column;gap:10px">
 <h2 class="rev">Papeaste rico.</h2>
@@ -207,6 +250,11 @@ footer b{font-family:var(--display);font-weight:400;font-size:22px}
 <b>PAPEA, de Pollos La Bomba</b>
 <span data-i18n="foot">Alérgenos: [por confirmar]. Granizado Bomba +18: consumo responsable.</span>
 </div></footer>
+
+<div class="dock" id="dock">
+<a class="btn gold" href="#express" data-i18n="dock_order">Armar pedido</a>
+<a class="btn line" id="call-d" href="tel:+50672777303" data-i18n="call">Llamar</a>
+</div>
 
 <script>
 (function(){
@@ -225,15 +273,21 @@ var DRINKS={
  es:[['Gaseosas',''],['Naturales','Refrescos naturales de fruta'],['Té frío',''],['Granizado Bomba Cero','Sin licor. En el local y en Express.'],['Granizado Bomba +18','Solo en el local. Mayores de 18 años. Consumo responsable.']],
  en:[['Soft drinks',''],['Fresh juices','Natural fruit drinks'],['Iced tea',''],['Granizado Bomba Cero','No alcohol. In the restaurant and Express.'],['Granizado Bomba +18','In the restaurant only. 18 and over. Please drink responsibly.']]};
 var T={
- es:{nav_menu:'Menú',nav_express:'Express',nav_donde:'Dónde',chip:'de Pollos La Bomba',sub:'Papas fritas en cono, banderilla o Caja Bomba, con sabores para todos. Abrimos el sábado 14 de noviembre en Horquetas de Sarapiquí.',cta_menu:'Ver el menú',cta_express:'Pedir Express',ph:'[Gallo Bombero con cono de papas, lo entrega el diseñador]',f1:'Todos los días de 10 a. m. a 10 p. m.',f2:'Para llevar y Express',f3:'Horquetas de Sarapiquí, junto a Soda La Bomba',menu_t:'El menú',menu_lead:'Precios por confirmar. Sabor del mes: por definir.',tab_papas:'Las Papas',tab_formatos:'Formatos y salsas',tab_bebidas:'Bebidas',exp_p:'Arma tu pedido aquí, copia el mensaje y mándalo por WhatsApp. Solo para llevar y Express, sin mesas.',exp_l1:'Zona de entrega: [radio de entrega]',exp_l2:'Paga por SINPE Móvil: [número SINPE]',exp_l3:'WhatsApp: [número de WhatsApp]',exp_l4:'Express no incluye bebidas con licor.',o_t:'Tu pedido',o_fmt:'Formato',o_sauce:'Salsa',o_name:'Tu nombre',o_addr:'Dónde te la llevamos',o_msg:'Mensaje listo para enviar',o_copy:'Copiar pedido',o_hint:'Los precios y el total se confirman por WhatsApp.',w_t:'Dónde',w_p:'Horquetas de Sarapiquí, junto a Soda La Bomba y la estación de servicio JJ.',w_h:'Todos los días de 10 a. m. a 10 p. m.',w_r:'Cuéntalo en Google, Instagram o Facebook.',foot:'Alérgenos: [por confirmar]. Granizado Bomba +18: consumo responsable.',
+ es:{skip:'Saltar al menú',w_map:'Cómo llegar',call:'Llamar',dock_order:'Armar pedido',nav_menu:'Menú',nav_express:'Express',nav_donde:'Dónde',chip:'de Pollos La Bomba',sub:'Papas fritas en cono, banderilla o Caja Bomba, con sabores para todos. Abrimos el sábado 14 de noviembre en Horquetas de Sarapiquí.',cta_menu:'Ver el menú',cta_express:'Pedir Express',ph:'[Gallo Bombero con cono de papas, lo entrega el diseñador]',f1:'Todos los días de 10 a. m. a 10 p. m.',f2:'Para llevar y Express',f3:'Horquetas de Sarapiquí, frente a Soda La Bomba',menu_t:'El menú',menu_lead:'Precios por confirmar. Sabor del mes: por definir.',tab_papas:'Las Papas',tab_formatos:'Formatos y salsas',tab_bebidas:'Bebidas',exp_p:'Arma tu pedido aquí y envíalo por WhatsApp. Solo para llevar y Express, sin mesas.',exp_l1:'Zona de entrega: [radio de entrega]',exp_l2:'Paga por SINPE Móvil: [número SINPE]',exp_l3:'WhatsApp: [número de WhatsApp]',exp_l4:'Express no incluye bebidas con licor.',o_t:'Tu pedido',o_fmt:'Formato',o_sauce:'Salsa',o_name:'Tu nombre',o_addr:'Dónde te la llevamos',o_msg:'Mensaje listo para enviar',o_wa:'Enviar por WhatsApp',o_copy:'Copiar pedido',o_hint:'Se abre WhatsApp con tu pedido listo. Los precios y el total se confirman por WhatsApp.',w_t:'Dónde',w_p:'Frente a Soda La Bomba y la Gasolinera JyJ, Horquetas de Sarapiquí.',w_h:'Todos los días de 10 a. m. a 10 p. m.',w_r:'Cuéntalo en Google, Instagram o Facebook.',foot:'Alérgenos: [por confirmar]. Granizado Bomba +18: consumo responsable.',
   f_t:'Formatos',f_l:'Llena el tanque de papas.',f_p:'Cono, banderilla y Caja Bomba.',s_t:'Salsas',price:'[precio]',
   m_hi:'Hola, quiero pedir Express de Papea:',m_fmt:'Formato',m_sauce:'Salsa',m_name:'A nombre de',m_addr:'Entregar en',m_empty:'Elige al menos una papa.',copied:'Pedido copiado. Pégalo en WhatsApp.',sel:'Selecciona el texto y cópialo.',ph_name:'Nombre y apellido',ph_addr:'Barrio, señas o referencia',minus:'Quitar uno de ',plus:'Agregar uno de '},
- en:{nav_menu:'Menu',nav_express:'Express',nav_donde:'Find us',chip:'by Pollos La Bomba',sub:'Fries in a cone, on a stick or in a Caja Bomba, with flavors for everyone. We open Saturday, November 14 in Horquetas de Sarapiquí.',cta_menu:'See the menu',cta_express:'Order Express',ph:'[Gallo Bombero holding a cone of fries, supplied by the designer]',f1:'Every day, 10 a.m. to 10 p.m.',f2:'Takeaway and Express',f3:'Horquetas de Sarapiquí, next to Soda La Bomba',menu_t:'The menu',menu_lead:'Prices to be confirmed. Flavor of the month: to be defined.',tab_papas:'The Papas',tab_formatos:'Formats and sauces',tab_bebidas:'Drinks',exp_p:'Build your order here, copy the message and send it on WhatsApp. Takeaway and Express only, no tables.',exp_l1:'Delivery area: [delivery radius]',exp_l2:'Pay by SINPE Móvil: [SINPE number]',exp_l3:'WhatsApp: [WhatsApp number]',exp_l4:'Express does not include alcoholic drinks.',o_t:'Your order',o_fmt:'Format',o_sauce:'Sauce',o_name:'Your name',o_addr:'Where we bring it',o_msg:'Message ready to send',o_copy:'Copy order',o_hint:'Prices and total are confirmed on WhatsApp.',w_t:'Find us',w_p:'Horquetas de Sarapiquí, next to Soda La Bomba and the JJ gas station.',w_h:'Every day, 10 a.m. to 10 p.m.',w_r:'Tell it on Google, Instagram or Facebook.',foot:'Allergens: [to be confirmed]. Granizado Bomba +18: please drink responsibly.',
+ en:{skip:'Skip to the menu',w_map:'Get directions',call:'Call us',dock_order:'Build your order',nav_menu:'Menu',nav_express:'Express',nav_donde:'Find us',chip:'by Pollos La Bomba',sub:'Fries in a cone, on a stick or in a Caja Bomba, with flavors for everyone. We open Saturday, November 14 in Horquetas de Sarapiquí.',cta_menu:'See the menu',cta_express:'Order Express',ph:'[Gallo Bombero holding a cone of fries, supplied by the designer]',f1:'Every day, 10 a.m. to 10 p.m.',f2:'Takeaway and Express',f3:'Horquetas de Sarapiquí, across from Soda La Bomba',menu_t:'The menu',menu_lead:'Prices to be confirmed. Flavor of the month: to be defined.',tab_papas:'The Papas',tab_formatos:'Formats and sauces',tab_bebidas:'Drinks',exp_p:'Build your order here and send it on WhatsApp. Takeaway and Express only, no tables.',exp_l1:'Delivery area: [delivery radius]',exp_l2:'Pay by SINPE Móvil: [SINPE number]',exp_l3:'WhatsApp: [WhatsApp number]',exp_l4:'Express does not include alcoholic drinks.',o_t:'Your order',o_fmt:'Format',o_sauce:'Sauce',o_name:'Your name',o_addr:'Where we bring it',o_msg:'Message ready to send',o_wa:'Send on WhatsApp',o_copy:'Copy order',o_hint:'WhatsApp opens with your order ready. Prices and total are confirmed on WhatsApp.',w_t:'Find us',w_p:'Across from Soda La Bomba and the JyJ gas station, Horquetas de Sarapiquí.',w_h:'Every day, 10 a.m. to 10 p.m.',w_r:'Tell it on Google, Instagram or Facebook.',foot:'Allergens: [to be confirmed]. Granizado Bomba +18: please drink responsibly.',
   f_t:'Formats',f_l:'Llena el tanque de papas.',f_p:'Cono, banderilla and Caja Bomba.',s_t:'Sauces',price:'[price]',
   m_hi:'Hi, I would like to place a Papea Express order:',m_fmt:'Format',m_sauce:'Sauce',m_name:'Name',m_addr:'Deliver to',m_empty:'Pick at least one papa.',copied:'Order copied. Paste it in WhatsApp.',sel:'Select the text and copy it.',ph_name:'Full name',ph_addr:'Neighborhood, directions or landmark',minus:'Remove one ',plus:'Add one '}
 };
 var qty={}; PAPAS.forEach(function(p){qty[p.n]=0}); qty['La Bomba']=1;
 var $=function(s){return document.querySelector(s)};
+/* Número de WhatsApp en formato internacional, solo dígitos y sin +, por ejemplo 506XXXXXXXX. Vacío: WhatsApp pide elegir el contacto. */
+var WA='50672777303';
+/* Teléfono para llamar, con +. Hoy es el de pruebas. */
+var TEL='+'+WA;
+['#call','#call-d'].forEach(function(s){var a=$(s);if(a)a.href='tel:'+TEL});
+function setWa(ok,text){var a=$('#wa');a.setAttribute('aria-disabled',String(!ok));a.href=ok?'https://wa.me/'+WA+'?text='+encodeURIComponent(text):'#'}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 
 function renderPanel(){
@@ -261,13 +315,14 @@ function fillSauce(){
 }
 function msg(){
   var t=T[L],lines=PAPAS.filter(function(p){return qty[p.n]>0}).map(function(p){return qty[p.n]+' x '+p.n});
-  if(!lines.length){$('#o-msg').value=t.m_empty;return}
+  if(!lines.length){$('#o-msg').value=t.m_empty;setWa(false,'');return}
   var out=[t.m_hi].concat(lines);
   out.push(t.m_fmt+': '+$('#o-fmt').value);
   out.push(t.m_sauce+': '+SAUCES[L][$('#o-sauce').selectedIndex]);
   if($('#o-name').value.trim())out.push(t.m_name+': '+$('#o-name').value.trim());
   if($('#o-addr').value.trim())out.push(t.m_addr+': '+$('#o-addr').value.trim());
   $('#o-msg').value=out.join('\n');
+  setWa(true,$('#o-msg').value);
 }
 function applyLang(){
   var t=T[L];
@@ -289,6 +344,9 @@ $('#lines').addEventListener('click',function(e){
 });
 ['#o-fmt','#o-sauce','#o-name','#o-addr'].forEach(function(s){$(s).addEventListener('input',msg)});
 $('#order').addEventListener('submit',function(e){e.preventDefault()});
+$('#wa').addEventListener('click',function(e){
+  if(this.getAttribute('aria-disabled')==='true'){e.preventDefault();$('#ok').textContent=T[L].m_empty}
+});
 $('#copy').addEventListener('click',function(){
   var ta=$('#o-msg'),t=T[L];
   function fallback(){ta.focus();ta.select();$('#ok').textContent=t.sel}
@@ -297,6 +355,7 @@ $('#copy').addEventListener('click',function(){
   }else fallback();
 });
 applyLang();
+if('IntersectionObserver' in window){new IntersectionObserver(function(en){$('#dock').classList.toggle('off',en[0].isIntersecting)},{threshold:.15}).observe($('#express'))}
 })();
 </script>
 
