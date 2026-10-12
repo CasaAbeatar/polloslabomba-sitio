@@ -65,21 +65,27 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 <span class="tag">Horquetas de Sarapiquí</span>
 <h1 id="t-pollos" class="logo"><img src="img/logo-pollos-amarillo.png" width="700" height="701" alt="Pollos La Bomba"></h1>
 <p class="lema">Abrimos el sábado 14 de noviembre</p>
-<p class="soon">Todos los días de 10 a. m. a 10 p. m.<br>Frente a Soda La Bomba y la Gasolinera JyJ.<br>Tel. y WhatsApp: 7277-7303</p>
 <div class="btns">
-<a class="btn gold" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener">Cómo llegar</a>
-<a class="btn line" id="call" href="tel:+50672777303">Llamar al 7277-7303</a>
+<a class="btn gold" data-track="entrada-como-llegar" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener">Cómo llegar</a>
+<a class="btn line" id="call" data-track="entrada-llamar" href="tel:+50672777303">Llamar al 7277-7303</a>
 </div>
 </section>
-<a class="half right" href="papea/index.html" aria-labelledby="t-papea">
+<a class="half right" href="papea/index.html" data-track="entrada-papea" aria-labelledby="t-papea">
 <span class="tag">Nuevo</span>
 <h2 id="t-papea">Papea</h2>
 <p class="lema">Pura papa, pura vida.</p>
-<p class="soon" style="max-width:320px">Papas fritas en cono, banderilla y Caja Bomba. Ve el menú y arma tu pedido.</p>
+<p class="soon" style="max-width:320px">Papas fritas en cono y Caja Bomba. Ve el menú y arma tu pedido.</p>
 <span class="btn">Ver menú y pedir</span>
 </a>
 </main>
-<div class="bar">Abrimos el sábado 14 de noviembre. Todos los días de 10 a. m. a 10 p. m. Frente a Soda La Bomba.</div>
+<div class="bar">Todos los días de 10 a. m. a 10 p. m. Frente a Soda La Bomba y la Gasolinera JyJ.</div>
 
+<script>
+/* Analítica opcional y sin cookies (GoatCounter). Para activarla: crear cuenta gratis en goatcounter.com y poner aquí el código del sitio. Vacío: no se carga nada. */
+var GC='';
+function track(n){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:n,event:true})}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest('[data-track]');if(a)track(a.dataset.track)});
+if(GC){var g=document.createElement('script');g.async=true;g.src='//gc.zgo.at/count.js';g.setAttribute('data-goatcounter','https://'+GC+'.goatcounter.com/count');document.head.appendChild(g)}
+</script>
 </body>
 </html>
