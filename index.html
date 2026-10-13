@@ -52,6 +52,17 @@ header.top nav a:hover{background:rgba(255,255,255,.12)}
 .hrs{margin:0;font-weight:800;font-size:17px}
 .bar a{display:inline-flex;align-items:center;min-height:44px;font-weight:800}
 .bar p{margin:0}
+.fam{background:var(--red);color:#fff;padding:56px 20px;text-align:center}
+.fam h2{font-size:clamp(34px,6vw,60px);margin:0}
+.fam .lead{max-width:640px;margin:12px auto 24px;font-size:18px}
+.fcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;max-width:1000px;margin:0 auto;text-align:left}
+.fc{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:16px;border:2px solid var(--gold);background:rgba(0,0,0,.25);color:#fff;text-decoration:none;min-height:44px}
+.fc b{font-family:var(--display);font-size:20px;text-transform:uppercase;line-height:1.1}
+.fc span{font-size:15px}
+.fc .go{margin-top:auto;padding-top:6px;font-weight:800;color:var(--gold)}
+.fc.cur{background:var(--gold);color:var(--gold-ink)}.fc.cur .go{color:var(--gold-ink)}
+a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.fc:focus-visible .go{color:var(--red)}
+
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .split{flex:1 0 auto;display:grid;grid-template-columns:1fr 1fr}
 .half{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:48px 20px;min-width:0}
@@ -100,13 +111,22 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 <span class="btn">Ver menú y pedir</span>
 </a>
 </main>
+<section class="fam" aria-labelledby="t-fam">
+<h2 id="t-fam"><span data-years>13</span> años en la Ruta 4</h2>
+<p class="lead">Comida casera y de altísima calidad, preparada todos los días para Horquetas de Sarapiquí y para quienes viajan por la ruta. Soda La Bomba, Pollos La Bomba y Papea tienen el mismo respaldo.</p>
+<div class="fcs">
+<a class="fc" data-track="fam-soda" href="https://www.sodalabomba.com"><b>Soda La Bomba</b><span>Comida casera y rápida. Abierta las 24 horas, los 7 días.</span><span class="go">Visitar →</span></a>
+<div class="fc cur" aria-current="page"><b>Pollos La Bomba</b><span>Pollo frito. Todos los días de 10 a. m. a 10 p. m. Abrimos el sábado 14 de noviembre.</span><span class="go">Estás aquí</span></div>
+<a class="fc" data-track="fam-papea" href="papea/index.html"><b>Papea</b><span>Papas fritas en cono y caja, para llevar y Express.</span><span class="go">Visitar →</span></a>
+</div>
+</section>
 <footer class="bar">
 <p>Frente a Soda La Bomba y la Gasolinera JyJ, Horquetas de Sarapiquí.</p>
-<p>Somos parte del mismo grupo de Soda La Bomba, en la Ruta 4 desde 2013.</p>
-<p><a href="https://www.sodalabomba.com" data-track="pie-soda">Visitar Soda La Bomba</a></p>
 </footer>
 
 <script>
+function ys(){var y=new Date().getFullYear()-2013;document.querySelectorAll('[data-years]').forEach(function(e){e.textContent=y})}
+ys();
 /* Analítica opcional y sin cookies (GoatCounter). Para activarla: crear cuenta gratis en goatcounter.com y poner aquí el código del sitio. Vacío: no se carga nada. */
 var GC='';
 function track(n){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:n,event:true})}catch(e){}}
