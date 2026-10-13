@@ -20,8 +20,13 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Pollos La Bomba","url":"https://www.polloslabomba.com/","image":"https://www.polloslabomba.com/img/og-papea.png","description":"Pollo frito y Papea, papas fritas en cono y Caja Bomba, en Horquetas de Sarapiquí.","servesCuisine":["Pollo frito","Papas fritas"],"telephone":"+506 7277-7303","hasMap":"https://www.google.com/maps/search/?api=1&query=10.333714181537344,-83.95064152587013","geo":{"@type":"GeoCoordinates","latitude":10.333714181537344,"longitude":-83.95064152587013},"address":{"@type":"PostalAddress","streetAddress":"Frente a Soda La Bomba y Gasolinera JyJ","addressLocality":"Horquetas de Sarapiquí","addressRegion":"Heredia","addressCountry":"CR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"22:00","validFrom":"2026-11-14"}],"department":{"@type":"Restaurant","name":"Papea","url":"https://www.polloslabomba.com/papea/"}}
+</script>
 </head>
 <body>
+<a class="skip" href="#papea">Saltar a Papea</a>
+<noscript><p class="ns">Esta página funciona mejor con JavaScript, pero puedes llamar al 7277-7303 o abrir el menú de <a href="papea/index.html">Papea</a>.</p></noscript>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +40,18 @@
 html{height:100%}
 body{min-height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.5;display:flex;flex-direction:column}
 a{color:inherit}
+.skip{position:absolute;left:8px;top:-60px;z-index:20;background:var(--gold);color:var(--gold-ink);font-weight:700;padding:12px 18px;border-radius:10px}
+.skip:focus{top:8px}
+.ns{margin:0;padding:12px 20px;background:var(--gold);color:var(--gold-ink);font-weight:700}
+header.top{position:sticky;top:0;z-index:10;background:var(--bar);color:var(--bar-fg);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 12px;padding:4px 14px}
+header.top .brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:800;font-size:15px;text-decoration:none}
+header.top .brand img{width:32px;height:32px;border-radius:7px}
+header.top nav{display:flex;gap:2px}
+header.top nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-weight:700;font-size:15px;text-decoration:none;border-radius:8px}
+header.top nav a:hover{background:rgba(255,255,255,.12)}
+.hrs{margin:0;font-weight:800;font-size:17px}
+.bar a{display:inline-flex;align-items:center;min-height:44px;font-weight:800}
+.bar p{margin:0}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .split{flex:1 0 auto;display:grid;grid-template-columns:1fr 1fr}
 .half{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:48px 20px;min-width:0}
@@ -58,19 +75,24 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 .left .btn.line{border-color:var(--left-fg);color:var(--left-fg)}
 .left .lema{color:var(--gold)}
 .bar{background:var(--bar);color:var(--bar-fg);font-size:14px;font-weight:700;text-align:center;padding:12px 20px}
-@media (max-width:700px){.split{grid-template-columns:1fr;grid-auto-rows:auto}.half{padding:44px 20px;min-height:50svh}}
+@media (max-width:700px){.split{grid-template-columns:1fr;grid-auto-rows:auto}.half{padding:26px 20px;gap:12px}.logo img{width:128px}.btn{min-height:48px;padding:0 18px;font-size:16px}.right h2{font-size:52px}.right .soon{display:none}}
 </style>
-<main class="split">
+<header class="top">
+<a class="brand" href="index.html" aria-label="Pollos La Bomba, inicio"><img src="img/favicon-48.png" alt="" width="32" height="32"><span>Pollos La Bomba</span></a>
+<nav aria-label="Principal"><a href="papea/index.html" data-track="nav-papea">Papea</a><a href="https://www.sodalabomba.com" data-track="nav-soda">Soda La Bomba</a></nav>
+</header>
+<main class="split" id="inicio">
 <section class="half left" aria-labelledby="t-pollos">
 <span class="tag">Horquetas de Sarapiquí</span>
 <h1 id="t-pollos" class="logo"><img src="img/logo-pollos-amarillo.png" width="700" height="701" alt="Pollos La Bomba"></h1>
 <p class="lema">Abrimos el sábado 14 de noviembre</p>
+<p class="hrs">Todos los días de 10 a. m. a 10 p. m.</p>
 <div class="btns">
 <a class="btn gold" data-track="entrada-como-llegar" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener">Cómo llegar</a>
 <a class="btn line" id="call" data-track="entrada-llamar" href="tel:+50672777303">Llamar al 7277-7303</a>
 </div>
 </section>
-<a class="half right" href="papea/index.html" data-track="entrada-papea" aria-labelledby="t-papea">
+<a class="half right" id="papea" href="papea/index.html" data-track="entrada-papea" aria-labelledby="t-papea">
 <span class="tag">Nuevo</span>
 <h2 id="t-papea">Papea</h2>
 <p class="lema">Pura papa, pura vida.</p>
@@ -78,7 +100,11 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 <span class="btn">Ver menú y pedir</span>
 </a>
 </main>
-<div class="bar">Todos los días de 10 a. m. a 10 p. m. Frente a Soda La Bomba y la Gasolinera JyJ.</div>
+<footer class="bar">
+<p>Frente a Soda La Bomba y la Gasolinera JyJ, Horquetas de Sarapiquí.</p>
+<p>Somos parte del mismo grupo de Soda La Bomba, en la Ruta 4 desde 2013.</p>
+<p><a href="https://www.sodalabomba.com" data-track="pie-soda">Visitar Soda La Bomba</a></p>
+</footer>
 
 <script>
 /* Analítica opcional y sin cookies (GoatCounter). Para activarla: crear cuenta gratis en goatcounter.com y poner aquí el código del sitio. Vacío: no se carga nada. */
