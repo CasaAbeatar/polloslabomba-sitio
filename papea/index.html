@@ -7,6 +7,7 @@
 <meta name="description" content="Papea, las papas fritas de Pollos La Bomba, en Horquetas de Sarapiquí: cono y Caja Bomba, para llevar y Express. Abrimos el sábado 14 de noviembre.">
 <meta name="theme-color" content="#171212">
 <link rel="canonical" href="https://www.polloslabomba.com/papea/">
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="../img/favicon-48.png">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
@@ -154,6 +155,7 @@ nav.main{order:2;margin-left:auto}
 @media (max-width:640px){.tel-d{display:none}}
 .btn.line{border-color:currentColor;color:inherit;background:transparent}
 .btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed}
+.ph[hidden]{display:none}
 .ph{display:none;flex:0 1 300px;width:100%;max-width:300px;aspect-ratio:1/1;border:3px dashed var(--gold);border-radius:20px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;padding:16px;line-height:1.3}
 .bar{background:var(--ink);color:var(--ink-fg);font-size:14px;font-weight:700;text-align:center;padding:16px 20px;display:flex;flex-direction:column;align-items:center;gap:2px}
 .bar b{font-size:15px;text-transform:uppercase;letter-spacing:.04em}
@@ -204,12 +206,6 @@ form.order .mo{flex-direction:row;align-items:center;gap:10px}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .pill{background:var(--gold);color:var(--gold-ink);font-weight:700;padding:10px 18px;border-radius:999px}
 
-/* express */
-.express{background:var(--ink);color:var(--ink-fg)}
-.express h2{color:var(--gold)}
-.express .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;margin-top:28px}
-.express ol.steps{margin:16px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:6px;font-weight:700}
-.express ul{margin:16px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
 form.order{background:var(--soft);color:var(--fg);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0}
 form.order h3{font-size:20px}
 .row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
@@ -256,6 +252,40 @@ a.lk{display:inline-flex;align-items:center;min-height:44px}
 .fc.cur{background:var(--gold-ink);color:#fff}.fc.cur .go{color:var(--gold)}
 a.fc:hover,a.fc:focus-visible{background:var(--red);border-color:var(--red)}a.fc:hover .go,a.fc:focus-visible .go{color:#fff}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* carrito: mismo diseño en todos los sitios, colores claros */
+section.ord{color-scheme:light;max-width:none;margin:0;padding:48px 20px;--bg:#FBF4EA;--fg:#171212;--muted:#4A3F3F;--line:#E6DDD3;--red:#B81622;background:var(--bg);color:var(--fg)}
+section.ord>*{max-width:760px;margin-left:auto;margin-right:auto}
+section.ord h2{font-size:clamp(40px,8vw,64px);text-align:center;margin:0 auto 18px;line-height:1;color:var(--fg)}
+.ord form.order{background:none;padding:0;border-radius:0;display:block}
+.ord .mode{border:2px solid var(--gold);border-radius:14px;padding:12px 14px;margin:0 0 14px}
+.ord .mode legend{font-weight:800;padding:0 6px;margin:0}
+.ord .mo{display:flex;gap:10px;align-items:flex-start;padding:8px 0;min-height:0}
+.ord .mo input{margin-top:5px}.ord .mo b{display:block}
+.ord .ban{margin:0 0 14px}
+.ord .facts{margin:0 auto 18px;padding-left:22px;font-size:15px}
+.ord .box{margin-top:32px;border:2px solid var(--gold);border-radius:16px;padding:8px 18px 22px;background:#fff}
+.ord .facts{background:none;color:inherit;font-weight:400;text-align:left;padding-block:0;padding-right:0}
+.ord .emp a{text-decoration:none}
+.ord .emp{font-size:21px;font-weight:700;text-align:center;margin:22px 0}
+.ord .frm{display:grid;gap:12px;margin:8px 0 18px}
+.ord .frm label{display:grid;gap:4px;font-weight:700;font-size:15px}
+.ord .frm input,.ord .frm textarea,.ord .frm select{font:400 17px var(--body);padding:10px 12px;border-radius:10px;border:2px solid var(--fg);background:#fff;color:var(--fg);min-height:44px}
+.ord .frm textarea{min-height:0}
+.ord .frm label[hidden]{display:none}
+.ord .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.ord .foot{margin-top:18px;font-size:15px;text-align:center;color:var(--fg)}
+.ord .foot:empty{display:none}
+.ord .miss{margin:0 0 12px}
+.ord .cl .rm{color:var(--red)}
+.ord .cl .cn{grid-column:1/-1}
+.ord .cl .cn .lb{display:block;font-size:14px;opacity:.85}
+.ord .cl .ctl{grid-column:2;grid-row:2}
+.ord .cl .rm{grid-column:1;grid-row:2;align-self:center}
+.sr{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.ch{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ch button{min-height:40px;padding:0 12px;border-radius:999px;border:2px solid var(--fg);background:transparent;color:var(--fg);font:700 14px var(--body);cursor:pointer}
+.ch button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:var(--red-ink)}
+.sd{font-size:14px;color:var(--muted);margin-top:6px}
 .st{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 10px;padding:5px 12px 6px;font-size:13px;font-weight:700;background:#000;color:#fff;text-align:center}
 .st .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3ba55d;margin-right:6px}
 .st[data-e="0"] .dot{background:#F3A62C}
@@ -285,7 +315,7 @@ a.fc:hover,a.fc:focus-visible{background:var(--red);border-color:var(--red)}a.fc
 <a class="btn gold" href="#menu" data-i18n="cta_menu">Ver el menú</a>
 </div>
 </div>
-<div class="ph" data-i18n="ph">[Logo de Súper Gallo con cono de papas, lo entrega el diseñador]</div>
+<div class="ph" hidden data-i18n="ph">[Logo de Súper Gallo con cono de papas, lo entrega el diseñador]</div>
 </div>
 </section>
 <div class="facts" id="facts"><div class="wrap">
@@ -295,57 +325,42 @@ a.fc:hover,a.fc:focus-visible{background:var(--red);border-color:var(--red)}a.fc
 <section class="sec" id="menu" aria-labelledby="h-menu">
 <div class="wrap">
 <h2 class="t" id="h-menu" data-i18n="menu_t">El menú</h2>
-<p class="lead" data-i18n="menu_lead">Precios por confirmar. Sabor del mes: por definir.</p>
-<p class="hn" data-i18n="cb_hint">Elige cono o caja para cada papa.</p>
+<p class="hn" data-i18n="cb_hint">Elige formato y salsa para cada papa.</p>
 <div id="lines"></div>
 </div>
 </section>
 
-<section class="sec express" id="express" aria-labelledby="h-exp">
-<div class="wrap">
-<h2 class="t" id="h-exp">Llama y llega Papea <span style="text-transform:lowercase">by</span> Pollos La Bomba.</h2>
-<div class="cols">
-<div>
-<p data-i18n="exp_p">Arma tu pedido aquí y envíalo por WhatsApp. Solo para llevar y Express, sin mesas.</p>
-<ul>
-<li data-i18n="exp_l1">Zona de entrega Express: unos 10 km a la redonda. Por la vía hacia Puerto Viejo, hasta La Chaves. Por la vía hacia Río Frío y el cruce, hasta Colonia Cubujuquí.</li>
-<li data-i18n="exp_l4">Express no incluye bebidas con licor.</li>
-</ul>
-</div>
+<section class="ord" id="pedir" aria-labelledby="t-ped">
+<h2 id="t-ped" data-i18n="o_t">Tu pedido</h2>
 <form class="order" id="order" autocomplete="off">
-<h3 data-i18n="o_t">Tu pedido</h3>
 <fieldset class="mode" id="mode"><legend data-i18n="o_mode">¿Cómo lo quieres?</legend>
-<label class="mo"><input type="radio" name="mo" value="Express" checked><span data-i18n="o_exp">Express, te lo llevamos</span></label>
-<label class="mo"><input type="radio" name="mo" value="Retiro"><span data-i18n="o_ret">Para llevar, lo retiro en el local</span></label>
+<label class="mo"><input type="radio" name="mo" value="Express" checked><span><b data-i18n="o_exp">Express, te lo llevamos</b></span></label>
+<label class="mo"><input type="radio" name="mo" value="Retiro"><span><b data-i18n="o_ret">Para llevar, lo retiro en el local</b></span></label>
 </fieldset>
 <p class="ban" id="ban" role="status" hidden></p>
+<ul class="facts"><li data-i18n="exp_l1">Zona de entrega Express: unos 10 km a la redonda. Por la vía hacia Puerto Viejo, hasta La Chaves. Por la vía hacia Río Frío y el cruce, hasta Colonia Cubujuquí.</li><li data-i18n="exp_l4">Express no incluye bebidas con licor.</li></ul>
 <button type="button" class="btn line" id="rep" data-i18n="rep" hidden>Repetir mi último pedido</button>
+<div id="resumen" class="box">
 <div id="sumry"></div>
-<label for="o-name"><span data-i18n="o_name">Tu nombre</span>
-<input type="text" id="o-name" placeholder=""></label>
-<label for="o-addr" id="w-a"><span data-i18n="o_addr">Dónde te la llevamos (dirección exacta)</span>
-<input type="text" id="o-addr" placeholder=""></label>
-<label for="o-hora" id="w-h" hidden><span data-i18n="o_hora">¿A qué hora pasas a retirarlo? (opcional)</span>
-<input type="text" id="o-hora"></label>
-<label for="o-note"><span data-i18n="o_note">Notas (opcional)</span>
-<textarea id="o-note" rows="2"></textarea></label>
-<label for="o-pay"><span data-i18n="o_pay">Cómo pagas</span>
-<select id="o-pay"></select></label>
-<div class="pay" id="pay"><span class="pl" data-i18n="pay_l">Número SINPE Móvil</span><b class="pn" id="pn">[número SINPE]</b><button type="button" class="btn line" id="pcopy" data-i18n="pay_c">Copiar número</button><span class="pt" data-i18n="pay_t">El pago lo haces desde la app de tu banco. Tu pedido se envía aparte, con el botón de abajo.</span></div>
-<label for="o-msg"><span data-i18n="o_msg">Mensaje listo para enviar</span>
-<textarea id="o-msg" readonly></textarea></label>
+<div class="frm">
+<label for="o-name"><span data-i18n="o_name">Tu nombre</span><input type="text" id="o-name" autocomplete="name"></label>
+<label for="o-addr" id="w-a"><span data-i18n="o_addr">Dónde te la llevamos (dirección exacta)</span><textarea id="o-addr" rows="2"></textarea></label>
+<label for="o-hora" id="w-h" hidden><span data-i18n="o_hora">¿A qué hora pasas a retirarlo? (opcional)</span><input type="text" id="o-hora"></label>
+<label for="o-note"><span data-i18n="o_note">Notas (opcional)</span><textarea id="o-note" rows="2"></textarea></label>
+<label for="o-pay"><span data-i18n="o_pay">Forma de pago</span><select id="o-pay"></select></label>
+<div class="pay" id="pay"><span class="pl" data-i18n="pay_l">Paga por SINPE Móvil al</span><b class="pn" id="pn">7277-7303</b><button type="button" class="btn line" id="pcopy" data-i18n="pay_c">Copiar número</button><span class="pt" data-i18n="pay_t">El pago lo haces desde la app de tu banco. Tu pedido se envía aparte, con el botón de abajo.</span></div>
+</div>
+<textarea id="o-msg" class="sr" readonly tabindex="-1" aria-hidden="true"></textarea>
 <p class="miss" id="miss" role="alert" hidden></p>
-<a class="btn gold" id="wa" data-track="pedido-whatsapp" href="#" target="_blank" rel="noopener" data-i18n="o_wa">Enviar pedido por WhatsApp</a>
-<button type="button" class="btn line" id="copy" data-track="pedido-copiar" data-i18n="o_copy">Copiar pedido</button>
-<p class="ok" id="ok" role="status"></p>
-<p class="hint" data-i18n="o_hint">Se abre WhatsApp con tu pedido listo. Los precios y el total se confirman por WhatsApp.</p>
+<div class="btns"><a class="btn gold" id="wa" data-track="pedido-whatsapp" href="#" target="_blank" rel="noopener" data-i18n="o_wa">Enviar pedido por WhatsApp</a><button type="button" class="btn line" id="copy" data-track="pedido-copiar" data-i18n="o_copy">Copiar pedido</button></div>
+<p class="foot" id="ok" role="status"></p>
+<p class="foot" data-i18n="o_hint">Se abre WhatsApp con tu pedido listo. Los precios y el total se confirman por WhatsApp.</p>
+</div>
 </form>
-</div>
-</div>
 </section>
 
 <section class="info" id="info" aria-label="Datos de Papea">
-<div><h2 data-i18n="h_t">Horarios</h2><p><b data-i18n="h_l">Local:</b> <span data-i18n="h_lv">todos los días, de 10 a. m. a 10 p. m.</span><br><b data-i18n="h_e">Express:</b> <span data-i18n="h_ev">todos los días, de 10 a. m. a 10 p. m.</span></p></div>
+<div><h2 data-i18n="h_t">Horarios</h2><p><b data-i18n="h_l">Local y Express:</b> <span data-i18n="h_lv">todos los días, de 10 a. m. a 10 p. m.</span></p></div>
 <div><h2 data-i18n="w_t">Dónde estamos</h2><p><span data-i18n="w_p1">Sobre Ruta 4, Horquetas de Sarapiquí.</span><br><span data-i18n="w_p2">Frente a Soda La Bomba y la Gasolinera JyJ.</span></p><div class="ib"><a class="btn gold" id="map" data-track="como-llegar" href="https://www.google.com/maps/search/?api=1&query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Google Maps</span></a><a class="btn line" id="waze" data-track="waze" href="https://waze.com/ul?ll=10.333714181537344,-83.95064152587013&navigate=yes&zoom=17" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Waze</span></a></div></div>
 <div><h2 data-i18n="c_t">Contacto</h2><p><a id="tel-t" href="tel:+50672777303" data-track="llamar">7277-7303</a></p><div class="ib"><a class="btn wa" id="wac" data-track="wa-consulta" href="https://wa.me/50672777303" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="w_wa">Consultas por WhatsApp</span></a></div></div>
 </section>
@@ -361,18 +376,18 @@ a.fc:hover,a.fc:focus-visible{background:var(--red);border-color:var(--red)}a.fc
 
 <section class="sec fam" aria-labelledby="t-fam">
 <div class="wrap">
-<p class="lead" id="t-fam" data-i18n="fam_p">Somos una empresa familiar con {y} años en la Ruta 4, en Horquetas de Sarapiquí. Desde 2012 atendemos con el sabor casero de siempre.</p>
+<p class="lead" id="t-fam" data-i18n="fam_p">Somos una empresa familiar con {y} años en la Ruta 4, en Horquetas de Sarapiquí. Desde 2012 atendemos con el sabor de siempre.</p>
 <div class="fcs">
-<a class="fc" data-track="fam-soda" href="https://www.sodalabomba.com"><b>Soda La Bomba</b><span data-i18n="fam_s">Comida casera y rápida.</span><span class="go" data-i18n="fam_go">Visitar →</span></a>
+<a class="fc" data-track="fam-soda" href="https://www.sodalabomba.com"><b>Soda La Bomba</b><span data-i18n="fam_s">La mejor comida. Abierto 24 horas.</span><span class="go" data-i18n="fam_go">Visitar →</span></a>
 <a class="fc" data-track="fam-pollos" href="../index.html"><b>Pollos La Bomba</b><span data-i18n="fam_p1">Pollo frito y Papea.</span><span class="go" data-i18n="fam_go">Visitar →</span></a>
 </div>
 </div>
 </section>
 
-<footer class="bar"><b>Papea <span style="text-transform:lowercase">by</span> Pollos La Bomba</b><p data-i18n="foot">Alérgenos: [por confirmar]. Granizado Bomba +18: consumo responsable.</p><a href="#inicio" data-up="" data-i18n="up">↑ Volver arriba</a></footer>
+<footer class="bar"><b>Papea <span style="text-transform:lowercase">by</span> Pollos La Bomba</b><p data-i18n="foot">Granizado Bomba +18: consumo responsable.</p><a href="#inicio" data-up="" data-i18n="up">↑ Volver arriba</a></footer>
 <div class="toast" id="toast" role="status" hidden></div>
 
-<div class="cbar" id="cbar" hidden><span id="cinfo"></span><a class="btn gold" href="#express" data-i18n="cb_view">Ver pedido</a></div>
+<div class="cbar" id="cbar" hidden><span id="cinfo"></span><a class="btn gold" href="#pedir" data-i18n="cb_view">Ver pedido</a></div>
 <nav class="bbar" id="bbar" aria-label="Acciones rápidas" data-i18n-aria="bbar_aria"><a class="p" href="#menu" data-i18n="bb_menu">Menú y pedir</a><a href="#info" data-track="bbar-info" data-i18n="bb_info">Información</a><a href="tel:+50672777303" id="call-d" data-track="llamar-barra"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span data-i18n="bb_call">Llamar</span></a></nav>
 
 <script>
@@ -390,16 +405,19 @@ var PAPAS=[
 var PAY={es:['SINPE Móvil','Efectivo'],en:['SINPE Móvil','Cash']};
 var FMT=[{k:'C',es:'cono',en:'cone',msg:'Cono'},{k:'B',es:'caja',en:'box',msg:'Caja'}];
 var DR=[{n:'Gaseosas',es:'Gaseosas',en:'Soft drinks'},{n:'Naturales',es:'Naturales',en:'Fresh juices'},{n:'Té frío',es:'Té frío',en:'Iced tea'},{n:'Granizado Bomba Cero',es:'Granizado Bomba Cero',en:'Granizado Bomba Cero'}];
-var SAUCES={es:['Picante','Caribeña','Suave','De la casa'],en:['Hot','Caribbean','Mild','House sauce']};
+var SAUCES={es:['Picante','Caribeña','Suave','De la casa','Sin salsa'],en:['Hot','Caribbean','Mild','House sauce','No sauce']};
+var SAUCED={es:['Con chile. Para quien pide más fuego.','Dulce y cítrica, con un toque de chile.','Cremosa y sin picante. La de los niños.','La de siempre en Papea. Va por defecto.','Tus papas solo con sal.'],en:['With chili. For those who want more heat.','Sweet and citrusy, with a touch of chili.','Creamy and not spicy. The kids\' pick.','Our usual at Papea. Default choice.','Your fries with just salt.']};
+function skey(k){return k.split('|')[0]}
+function sa(k){var v=sauceBy[skey(k)];return v===undefined?3:v}
 var DRINKS={
  es:[['Gaseosas',''],['Naturales','Refrescos naturales de fruta'],['Té frío',''],['Granizado Bomba Cero','Sin licor. En el local y en Express.'],['Granizado Bomba +18','Solo en el local. Mayores de 18 años. Consumo responsable.']],
  en:[['Soft drinks',''],['Fresh juices','Natural fruit drinks'],['Iced tea',''],['Granizado Bomba Cero','No alcohol. In the restaurant and Express.'],['Granizado Bomba +18','In the restaurant only. 18 and over. Please drink responsibly.']]};
 var T={
- es:{h_t:'Horarios',h_l:'Local:',h_lv:'todos los días, de 10 a. m. a 10 p. m.',h_e:'Express:',h_ev:'todos los días, de 10 a. m. a 10 p. m.',c_t:'Contacto',w_p1:'Sobre Ruta 4, Horquetas de Sarapiquí.',w_p2:'Frente a Soda La Bomba y la Gasolinera JyJ.',foot_a:'Horquetas de Sarapiquí, Ruta 4',bb_menu:'Menú y pedir',bb_info:'Información',bb_call:'Llamar',bbar_aria:'Acciones rápidas',o_mode:'¿Cómo lo quieres?',o_exp:'Express, te lo llevamos',o_ret:'Para llevar, lo retiro en el local',o_hora:'¿A qué hora pasas a retirarlo? (opcional)',o_note:'Notas (opcional)',ph_hora:'Por ejemplo, 8:30 p. m.',ph_note:'Sin sal, salsa aparte, etc.',ban_pre:'Papea abre el sábado 14 de noviembre a las 10 a. m. Todavía no recibimos pedidos.',ban_closed:'Estamos cerrados ahora. Papea atiende todos los días de 10 a. m. a 10 p. m., para llevar y Express.',m_hi_r:'Hola, quiero hacer un pedido de Papea para retiro en el local:',m_mode:'Modalidad',m_exp:'Express',m_ret:'Retiro en el local',m_pick:'Hora de retiro',m_note:'Notas',o_empty:'Aún no has agregado nada. Elige tus papas en el menú.',cb_view:'Ver pedido',cb_n1:'producto',cb_n:'productos',rm1:'Quitar uno',add1:'Agregar uno',sites_aria:'Nuestros negocios',pay_l:'Paga por SINPE Móvil al',pay_t:'El pago lo haces desde la app de tu banco. Tu pedido se envía aparte, con el botón de abajo.',pay_c:'Copiar número',pay_ok:'Número copiado',w_waze:'Abrir en Waze',fam_p:'Somos una empresa familiar con {y} años en la Ruta 4, en Horquetas de Sarapiquí. Desde 2012 atendemos con el sabor casero de siempre.',fam_s:'Comida casera y rápida. Abierta las 24 horas.',fam_p1:'Pollo frito y Papea. Todos los días de 10 a. m. a 10 p. m.',fam_pa:'Papas fritas en cono y caja, para llevar y Express.',fam_go:'Visitar →',fam_here:'Estás aquí',up:'↑ Volver arriba',grp:'Papea y Pollos La Bomba son parte del mismo grupo de Soda La Bomba, en la Ruta 4 desde 2012.',grp_l:'Visitar Soda La Bomba',skip:'Saltar al menú',back:'← Volver a',home_aria:'Volver a la página principal de Pollos La Bomba',add_c:'Agregar en cono',add_b:'Agregar en caja',o_pay:'Cómo pagas',o_dr:'Bebidas',add_d:'Agregar al pedido',m_pay:'Pago',added:' agregada a tu pedido',foot_home:'Ir a Pollos La Bomba',w_map:'Google Maps',call:'Llamar al {tel}',call_s:'Llamar',dock_order:'Armar pedido',nav_menu:'Menú',nav_express:'Express',nav_donde:'Dónde',chip:'de Pollos La Bomba',sub:'Papas fritas en cono o Caja Bomba, con sabores para todos.',cta_menu:'Ver el menú',cta_express:'Pedir Express',ph:'[Logo de Súper Gallo con cono de papas, lo entrega el diseñador]',f0:'Abrimos el sábado 14 de noviembre',f1:'Todos los días de 10 a. m. a 10 p. m.',f2:'Para llevar y Express',f3:'Horquetas de Sarapiquí, frente a Soda La Bomba',menu_t:'El menú',menu_lead:'Precios por confirmar. Sabor del mes: por definir.',tab_papas:'Las Papas',tab_formatos:'Formatos y salsas',tab_bebidas:'Bebidas',exp_p:'Agrega tus papas en el menú y envía tu pedido por WhatsApp. Solo para llevar y Express, sin mesas.',st1:'Arma tu pedido aquí abajo.',st2:'Envíalo por WhatsApp y te confirmamos el total.',st3:'Paga por SINPE Móvil o en efectivo.',exp_h:'Horario Express: todos los días de 10 a. m. a 10 p. m.',exp_l1:'Zona de entrega Express: unos 10 km a la redonda. Por la vía hacia Puerto Viejo, hasta La Chaves. Por la vía hacia Río Frío y el cruce, hasta Colonia Cubujuquí.',exp_l2:'Paga por SINPE Móvil: [número SINPE]',exp_l3:'WhatsApp y llamadas: {tel}',exp_l4:'Express no incluye bebidas con licor.',o_t:'Tu pedido',o_fmt:'Formato',sw_C:'Cono',sw_B:'Caja',cb_hint:'Elige cono o caja para cada papa.',fmt_C:'Cono',fmt_B:'Caja',in_C:'en cono',in_B:'en caja',o_sauce:'Salsa',o_sum_h:'Tu resumen',rm:'Quitar',clr:'Borrar pedido',rep:'Repetir mi último pedido',rmd:'Pedido anterior cargado.',o_name:'Tu nombre',o_addr:'Dónde te la llevamos (dirección exacta)',o_msg:'Mensaje listo para enviar',o_wa:'Enviar pedido por WhatsApp',o_copy:'Copiar pedido',o_hint:'Se abre WhatsApp con tu pedido listo. Los precios y el total se confirman por WhatsApp.',w_t:'Dónde estamos',w_tel:'Teléfono: {tel}',w_wa:'Consultas por WhatsApp',w_p:'Frente a Soda La Bomba y la Gasolinera JyJ, Horquetas de Sarapiquí.',w_h:'Todos los días de 10 a. m. a 10 p. m.',w_r:'Cuéntalo en Google, Instagram, Facebook o TikTok.',foot:'Alérgenos: [por confirmar]. Granizado Bomba +18: consumo responsable.',
-  f_t:'Formatos',f_l:'Llena el tanque de papas.',f_p:'Cono y Caja Bomba.',s_t:'Salsas',price:'[precio]',
+ es:{h_t:'Horarios',h_l:'Local y Express:',h_lv:'todos los días, de 10 a. m. a 10 p. m.',h_e:'Express:',h_ev:'todos los días, de 10 a. m. a 10 p. m.',c_t:'Contacto',w_p1:'Sobre Ruta 4, Horquetas de Sarapiquí.',w_p2:'Frente a Soda La Bomba y la Gasolinera JyJ.',foot_a:'Horquetas de Sarapiquí, Ruta 4',bb_menu:'Menú y pedir',bb_info:'Información',bb_call:'Llamar',bbar_aria:'Acciones rápidas',o_mode:'¿Cómo lo quieres?',o_exp:'Express, te lo llevamos',o_ret:'Para llevar, lo retiro en el local',o_hora:'¿A qué hora pasas a retirarlo? (opcional)',o_note:'Notas (opcional)',ph_hora:'Por ejemplo, 8:30 p. m.',ph_note:'Sin sal, salsa aparte, etc.',ban_pre:'Papea abre el sábado 14 de noviembre a las 10 a. m. Todavía no recibimos pedidos.',ban_closed:'Estamos cerrados ahora. Papea atiende todos los días de 10 a. m. a 10 p. m., para llevar y Express.',m_hi_r:'Hola, quiero hacer un pedido de Papea para retiro en el local:',m_mode:'Modalidad',m_exp:'Express',m_ret:'Retiro en el local',m_pick:'Hora de retiro',m_note:'Notas',o_empty:'Aún no has agregado nada. Elige tus papas en el menú de arriba.',cb_view:'Ver pedido',cb_n1:'producto',cb_n:'productos',rm1:'Quitar uno',add1:'Agregar uno',sites_aria:'Nuestros negocios',pay_l:'Paga por SINPE Móvil al',pay_t:'El pago lo haces desde la app de tu banco. Tu pedido se envía aparte, con el botón de abajo.',pay_c:'Copiar número',pay_ok:'Número copiado',w_waze:'Abrir en Waze',fam_p:'Somos una empresa familiar con {y} años en la Ruta 4, en Horquetas de Sarapiquí. Desde 2012 atendemos con el sabor de siempre.',fam_s:'La mejor comida. Abierto 24 horas.',fam_p1:'Pollo frito y Papea. Todos los días de 10 a. m. a 10 p. m.',fam_pa:'Papas fritas en cono y caja, para llevar y Express.',fam_go:'Visitar →',fam_here:'Estás aquí',up:'↑ Volver arriba',grp:'Papea y Pollos La Bomba son parte del mismo grupo de Soda La Bomba, en la Ruta 4 desde 2012.',grp_l:'Visitar Soda La Bomba',skip:'Saltar al menú',back:'← Volver a',home_aria:'Volver a la página principal de Pollos La Bomba',add_c:'Agregar en cono',add_b:'Agregar en caja',o_pay:'Forma de pago',o_dr:'Bebidas',add_d:'Agregar al pedido',m_pay:'Pago',added:' agregada a tu pedido',foot_home:'Ir a Pollos La Bomba',w_map:'Google Maps',call:'Llamar al {tel}',call_s:'Llamar',dock_order:'Armar pedido',nav_menu:'Menú',nav_express:'Express',nav_donde:'Dónde',chip:'de Pollos La Bomba',sub:'Papas fritas en cono o Caja Bomba, con sabores para todos.',cta_menu:'Ver el menú',cta_express:'Pedir Express',ph:'[Logo de Súper Gallo con cono de papas, lo entrega el diseñador]',f0:'Abrimos el sábado 14 de noviembre',f1:'Todos los días de 10 a. m. a 10 p. m.',f2:'Para llevar y Express',f3:'Horquetas de Sarapiquí, frente a Soda La Bomba',menu_t:'El menú',menu_lead:'Precios por confirmar. Sabor del mes: por definir.',tab_papas:'Las Papas',tab_formatos:'Formatos y salsas',tab_bebidas:'Bebidas',exp_p:'Agrega tus papas en el menú y envía tu pedido por WhatsApp. Solo para llevar y Express, sin mesas.',st1:'Arma tu pedido aquí abajo.',st2:'Envíalo por WhatsApp y te confirmamos el total.',st3:'Paga por SINPE Móvil o en efectivo.',exp_h:'Horario Express: todos los días de 10 a. m. a 10 p. m.',exp_l1:'Zona de entrega Express: unos 10 km a la redonda. Por la vía hacia Puerto Viejo, hasta La Chaves. Por la vía hacia Río Frío y el cruce, hasta Colonia Cubujuquí.',exp_l2:'Paga por SINPE Móvil: [número SINPE]',exp_l3:'WhatsApp y llamadas: {tel}',exp_l4:'Express no incluye bebidas con licor.',o_t:'Tu pedido',o_fmt:'Formato',sw_C:'Cono',sw_B:'Caja',cb_hint:'Elige formato y salsa para cada papa.',fmt_C:'Cono',fmt_B:'Caja',in_C:'en cono',in_B:'en caja',o_sauce:'Salsa',o_sum_h:'Tu resumen',rm:'Quitar',clr:'Borrar pedido',rep:'Repetir mi último pedido',rmd:'Pedido anterior cargado.',o_name:'Tu nombre',o_addr:'Dónde te la llevamos (dirección exacta)',o_msg:'Mensaje listo para enviar',o_wa:'Enviar pedido por WhatsApp',o_copy:'Copiar pedido',o_hint:'Se abre WhatsApp con tu pedido listo. Los precios y el total se confirman por WhatsApp.',w_t:'Dónde estamos',w_tel:'Teléfono: {tel}',w_wa:'Consultas por WhatsApp',w_p:'Frente a Soda La Bomba y la Gasolinera JyJ, Horquetas de Sarapiquí.',w_h:'Todos los días de 10 a. m. a 10 p. m.',w_r:'Cuéntalo en Google, Instagram, Facebook o TikTok.',foot:'Granizado Bomba +18: consumo responsable.',
+  f_t:'Formatos',f_l:'Llena el tanque de papas.',f_p:'Cono y Caja Bomba.',s_t:'Salsas',price:'',
   m_hi:'Hola, quiero pedir Express de Papea:',m_fmt:'Formato',m_sauce:'Salsa',m_name:'A nombre de',m_addr:'Entregar en',m_empty:'Elige al menos un producto.',m_miss:'Falta',m_it:'al menos un producto',m_nm:'tu nombre',m_ad:'la dirección de entrega',copied:'Pedido copiado. Pégalo en WhatsApp.',sel:'Selecciona el texto y cópialo.',ph_name:'Nombre y apellido',ph_addr:'Señas exactas, o pega tu punto de Waze o de WhatsApp',minus:'Quitar uno de ',plus:'Agregar uno de '},
- en:{h_t:'Hours',h_l:'In-store:',h_lv:'every day, 10 a.m. to 10 p.m.',h_e:'Express:',h_ev:'every day, 10 a.m. to 10 p.m.',c_t:'Contact',w_p1:'On Route 4, Horquetas de Sarapiquí.',w_p2:'Across from Soda La Bomba and the JyJ gas station.',foot_a:'Horquetas de Sarapiquí, Route 4',bb_menu:'Menu & order',bb_info:'Info',bb_call:'Call',bbar_aria:'Quick actions',o_mode:'How do you want it?',o_exp:'Express, we bring it to you',o_ret:'Takeaway, I pick it up at the restaurant',o_hora:'What time will you pick it up? (optional)',o_note:'Notes (optional)',ph_hora:'For example, 8:30 p.m.',ph_note:'No salt, sauce on the side, etc.',ban_pre:'Papea opens on Saturday, November 14 at 10 a.m. We are not taking orders yet.',ban_closed:'We are closed right now. Papea is open every day from 10 a.m. to 10 p.m., for takeaway and Express.',m_hi_r:'Hi, I would like to place a Papea order for pickup at the restaurant:',m_mode:'Type',m_exp:'Express',m_ret:'Pickup at the restaurant',m_pick:'Pickup time',m_note:'Notes',o_empty:'You have not added anything yet. Pick your fries from the menu.',cb_view:'View order',cb_n1:'item',cb_n:'items',rm1:'Remove one',add1:'Add one',sites_aria:'Our businesses',pay_l:'Pay by SINPE Móvil to',pay_t:'You pay from your bank app. Your order is sent separately, with the button below.',pay_c:'Copy number',pay_ok:'Number copied',w_waze:'Open in Waze',fam_p:'We are a family business with {y} years on Route 4, in Horquetas de Sarapiquí. Since 2012 we have served with the home-style flavor you know.',fam_s:'Home-style and fast food. Open 24 hours.',fam_p1:'Fried chicken and Papea. Every day, 10 a.m. to 10 p.m.',fam_pa:'Fries in a cone or a box, for takeaway and Express.',fam_go:'Visit →',fam_here:'You are here',up:'↑ Back to top',grp:'Papea and Pollos La Bomba are part of the same group as Soda La Bomba, on Route 4 since 2012.',grp_l:'Visit Soda La Bomba',skip:'Skip to the menu',back:'← Back to',home_aria:'Back to the Pollos La Bomba home page',add_c:'Add as cone',add_b:'Add as box',o_pay:'How you pay',o_dr:'Drinks',add_d:'Add to order',m_pay:'Payment',added:' added to your order',foot_home:'Go to Pollos La Bomba',w_map:'Google Maps',call:'Call {tel}',call_s:'Call',dock_order:'Build your order',nav_menu:'Menu',nav_express:'Express',nav_donde:'Find us',chip:'by Pollos La Bomba',sub:'Fries in a cone or in a Caja Bomba, with flavors for everyone.',cta_menu:'See the menu',cta_express:'Order Express',ph:'[Súper Gallo logo holding a cone of fries, supplied by the designer]',f0:'We open Saturday, November 14',f1:'Every day, 10 a.m. to 10 p.m.',f2:'Takeaway and Express',f3:'Horquetas de Sarapiquí, across from Soda La Bomba',menu_t:'The menu',menu_lead:'Prices to be confirmed. Flavor of the month: to be defined.',tab_papas:'The Papas',tab_formatos:'Formats and sauces',tab_bebidas:'Drinks',exp_p:'Add your fries from the menu and send your order on WhatsApp. Takeaway and Express only, no tables.',st1:'Build your order right below.',st2:'Send it on WhatsApp and we confirm the total.',st3:'Pay by SINPE Móvil or cash.',exp_h:'Express hours: every day, 10 a.m. to 10 p.m.',exp_l1:'Express delivery area: about 10 km around us. Along the road to Puerto Viejo, as far as La Chaves. Along the road to Río Frío and the junction, as far as Colonia Cubujuquí.',exp_l2:'Pay by SINPE Móvil: [SINPE number]',exp_l3:'WhatsApp and calls: {tel}',exp_l4:'Express does not include alcoholic drinks.',o_t:'Your order',o_fmt:'Format',sw_C:'Cone',sw_B:'Box',cb_hint:'Pick a cone or a box for each fries order.',fmt_C:'Cone',fmt_B:'Box',in_C:'in cone',in_B:'in box',o_sauce:'Sauce',o_sum_h:'Your summary',rm:'Remove',clr:'Delete order',rep:'Repeat my last order',rmd:'Previous order loaded.',o_name:'Your name',o_addr:'Where we bring it (exact address)',o_msg:'Message ready to send',o_wa:'Send order on WhatsApp',o_copy:'Copy order',o_hint:'WhatsApp opens with your order ready. Prices and total are confirmed on WhatsApp.',w_t:'Where we are',w_tel:'Phone: {tel}',w_wa:'Questions on WhatsApp',w_p:'Across from Soda La Bomba and the JyJ gas station, Horquetas de Sarapiquí.',w_h:'Every day, 10 a.m. to 10 p.m.',w_r:'Tell it on Google, Instagram, Facebook or TikTok.',foot:'Allergens: [to be confirmed]. Granizado Bomba +18: please drink responsibly.',
-  f_t:'Formats',f_l:'Llena el tanque de papas.',f_p:'Cone and Caja Bomba.',s_t:'Sauces',price:'[price]',
+ en:{h_t:'Hours',h_l:'In-store and Express:',h_lv:'every day, 10 a.m. to 10 p.m.',h_e:'Express:',h_ev:'every day, 10 a.m. to 10 p.m.',c_t:'Contact',w_p1:'On Route 4, Horquetas de Sarapiquí.',w_p2:'Across from Soda La Bomba and the JyJ gas station.',foot_a:'Horquetas de Sarapiquí, Route 4',bb_menu:'Menu & order',bb_info:'Info',bb_call:'Call',bbar_aria:'Quick actions',o_mode:'How do you want it?',o_exp:'Express, we bring it to you',o_ret:'Takeaway, I pick it up at the restaurant',o_hora:'What time will you pick it up? (optional)',o_note:'Notes (optional)',ph_hora:'For example, 8:30 p.m.',ph_note:'No salt, sauce on the side, etc.',ban_pre:'Papea opens on Saturday, November 14 at 10 a.m. We are not taking orders yet.',ban_closed:'We are closed right now. Papea is open every day from 10 a.m. to 10 p.m., for takeaway and Express.',m_hi_r:'Hi, I would like to place a Papea order for pickup at the restaurant:',m_mode:'Type',m_exp:'Express',m_ret:'Pickup at the restaurant',m_pick:'Pickup time',m_note:'Notes',o_empty:'You have not added anything yet. Pick your fries from the menu above.',cb_view:'View order',cb_n1:'item',cb_n:'items',rm1:'Remove one',add1:'Add one',sites_aria:'Our businesses',pay_l:'Pay by SINPE Móvil to',pay_t:'You pay from your bank app. Your order is sent separately, with the button below.',pay_c:'Copy number',pay_ok:'Number copied',w_waze:'Open in Waze',fam_p:'We are a family business with {y} years on Route 4, in Horquetas de Sarapiquí. Since 2012 we have served with the flavor you know.',fam_s:'The best food. Open 24 hours.',fam_p1:'Fried chicken and Papea. Every day, 10 a.m. to 10 p.m.',fam_pa:'Fries in a cone or a box, for takeaway and Express.',fam_go:'Visit →',fam_here:'You are here',up:'↑ Back to top',grp:'Papea and Pollos La Bomba are part of the same group as Soda La Bomba, on Route 4 since 2012.',grp_l:'Visit Soda La Bomba',skip:'Skip to the menu',back:'← Back to',home_aria:'Back to the Pollos La Bomba home page',add_c:'Add as cone',add_b:'Add as box',o_pay:'Payment method',o_dr:'Drinks',add_d:'Add to order',m_pay:'Payment',added:' added to your order',foot_home:'Go to Pollos La Bomba',w_map:'Google Maps',call:'Call {tel}',call_s:'Call',dock_order:'Build your order',nav_menu:'Menu',nav_express:'Express',nav_donde:'Find us',chip:'by Pollos La Bomba',sub:'Fries in a cone or in a Caja Bomba, with flavors for everyone.',cta_menu:'See the menu',cta_express:'Order Express',ph:'[Súper Gallo logo holding a cone of fries, supplied by the designer]',f0:'We open Saturday, November 14',f1:'Every day, 10 a.m. to 10 p.m.',f2:'Takeaway and Express',f3:'Horquetas de Sarapiquí, across from Soda La Bomba',menu_t:'The menu',menu_lead:'Prices to be confirmed. Flavor of the month: to be defined.',tab_papas:'The Papas',tab_formatos:'Formats and sauces',tab_bebidas:'Drinks',exp_p:'Add your fries from the menu and send your order on WhatsApp. Takeaway and Express only, no tables.',st1:'Build your order right below.',st2:'Send it on WhatsApp and we confirm the total.',st3:'Pay by SINPE Móvil or cash.',exp_h:'Express hours: every day, 10 a.m. to 10 p.m.',exp_l1:'Express delivery area: about 10 km around us. Along the road to Puerto Viejo, as far as La Chaves. Along the road to Río Frío and the junction, as far as Colonia Cubujuquí.',exp_l2:'Pay by SINPE Móvil: [SINPE number]',exp_l3:'WhatsApp and calls: {tel}',exp_l4:'Express does not include alcoholic drinks.',o_t:'Your order',o_fmt:'Format',sw_C:'Cone',sw_B:'Box',cb_hint:'Pick a format and sauce for each fries order.',fmt_C:'Cone',fmt_B:'Box',in_C:'in cone',in_B:'in box',o_sauce:'Sauce',o_sum_h:'Your summary',rm:'Remove',clr:'Delete order',rep:'Repeat my last order',rmd:'Previous order loaded.',o_name:'Your name',o_addr:'Where we bring it (exact address)',o_msg:'Message ready to send',o_wa:'Send order on WhatsApp',o_copy:'Copy order',o_hint:'WhatsApp opens with your order ready. Prices and total are confirmed on WhatsApp.',w_t:'Where we are',w_tel:'Phone: {tel}',w_wa:'Questions on WhatsApp',w_p:'Across from Soda La Bomba and the JyJ gas station, Horquetas de Sarapiquí.',w_h:'Every day, 10 a.m. to 10 p.m.',w_r:'Tell it on Google, Instagram, Facebook or TikTok.',foot:'Granizado Bomba +18: please drink responsibly.',
+  f_t:'Formats',f_l:'Llena el tanque de papas.',f_p:'Cone and Caja Bomba.',s_t:'Sauces',price:'',
   m_hi:'Hi, I would like to place a Papea Express order:',m_fmt:'Format',m_sauce:'Sauce',m_name:'Name',m_addr:'Deliver to',m_empty:'Pick at least one item.',m_miss:'Missing',m_it:'at least one item',m_nm:'your name',m_ad:'the delivery address',copied:'Order copied. Paste it in WhatsApp.',sel:'Select the text and copy it.',ph_name:'Full name',ph_addr:'Exact directions, or paste your Waze or WhatsApp location',minus:'Remove one ',plus:'Add one '}
 };
 var qty={}; PAPAS.forEach(function(p){FMT.forEach(function(f){qty[p.n+'|'+f.k]=0})}); DR.forEach(function(d){qty['D|'+d.n]=0});
@@ -426,7 +444,7 @@ function restore(d){
   if(!d||!d.q)return false;
   Object.keys(qty).forEach(function(k){var v=d.q[k];qty[k]=(typeof v==='number'&&v>0)?Math.min(20,Math.floor(v)):0});
   rowF={};if(d.r)Object.keys(d.r).forEach(function(n){if(d.r[n]==='B')rowF[n]='B'});
-  sauceBy={};if(d.s)Object.keys(d.s).forEach(function(k){var v=d.s[k];if(typeof v==='number'&&v>0&&v<SAUCES.es.length)sauceBy[k]=v});
+  sauceBy={};if(d.s)Object.keys(d.s).forEach(function(k){var v=d.s[k];if(k.indexOf('|')<0&&typeof v==='number'&&v>=0&&v<SAUCES.es.length&&v!==3)sauceBy[k]=v});
   return true;
 }
 function restoreFields(d){if(!d)return;var pi=Number(d.p);if(pi>=0&&pi<PAY[L].length)$('#o-pay').selectedIndex=pi;if(typeof d.n==='string')$('#o-name').value=d.n.slice(0,80);if(typeof d.h==='string')$('#o-hora').value=d.h.slice(0,60);if(typeof d.t==='string')$('#o-note').value=d.t.slice(0,300);setMode(d.md==='Retiro'?'Retiro':'Express');if(typeof d.a==='string')$('#o-addr').value=d.a.slice(0,200)}
@@ -434,10 +452,10 @@ function saveLast(){if(Object.keys(qty).some(function(k){return qty[k]>0}))put(l
 function stp(k,nm){return '<span class="ctl" data-k="'+esc(k)+'"><button type="button" data-d="-1" aria-label="'+T[L].rm1+': '+nm+'">−</button><span class="n">'+qty[k]+'</span><button type="button" data-d="1" aria-label="'+T[L].add1+': '+nm+'">+</button></span>'}
 function renderSum(){
   var t=T[L],h='',any=false;
-  PAPAS.forEach(function(p){FMT.forEach(function(f){var k=p.n+'|'+f.k,c=qty[k];if(c>0){any=true;var si=sauceBy[k]===undefined?3:sauceBy[k],nm=esc(p.n)+' ('+f[L]+')';
-    h+='<div class="cl"><div class="cn">'+esc(p.n)+' <span class="lb">('+f[L]+') · '+t.o_sauce+': '+esc(SAUCES[L][si])+'</span></div>'+stp(k,nm)+'<button type="button" class="rm" data-rm="'+esc(k)+'" aria-label="'+t.rm+': '+nm+'">'+t.rm+'</button></div>'}})});
+  PAPAS.forEach(function(p){FMT.forEach(function(f){var k=p.n+'|'+f.k,c=qty[k];if(c>0){any=true;var si=sa(k),nm=esc(p.n)+' ('+f[L]+')';
+    h+='<div class="cl"><div class="cn">'+esc(p.n)+' <span class="lb">('+f[L]+') · '+(si===4?esc(SAUCES[L][4]):t.o_sauce+': '+esc(SAUCES[L][si]))+'</span></div>'+stp(k,nm)+'<button type="button" class="rm" data-rm="'+esc(k)+'" aria-label="'+t.rm+': '+nm+'">'+t.rm+'</button></div>'}})});
   DR.forEach(function(d,i){var k='D|'+d.n,c=qty[k];if(c>0){any=true;h+='<div class="cl"><div class="cn">'+esc(d[L])+'</div>'+stp(k,esc(d[L]))+'<button type="button" class="rm" data-rm="'+esc(k)+'" aria-label="'+t.rm+': '+esc(d[L])+'">'+t.rm+'</button></div>'}});
-  $('#sumry').innerHTML=any?h+'<button type="button" class="btn line clr" data-clear="1">'+t.clr+'</button>':'<p class="hn"><a href="#menu" style="color:inherit">'+t.o_empty+'</a></p>';
+  $('#sumry').innerHTML=any?h+'<button type="button" class="btn line clr" data-clear="1">'+t.clr+'</button>':'<p class="emp"><a href="#menu" style="color:inherit">'+t.o_empty+'</a></p>';
   updateRep();updBars();
 }
 function updBars(){var c=0;Object.keys(qty).forEach(function(k){c+=qty[k]||0});cartN=c;var on=touched&&c>0&&!ordInView;$('#cbar').hidden=!on;$('#bbar').hidden=on||ordInView;if(c)$('#cinfo').textContent=c+' '+(c===1?T[L].cb_n1:T[L].cb_n)}
@@ -448,11 +466,11 @@ function renderLines(){
   var t=T[L];
   var ctl=function(k,lab){return '<span class="step"><button type="button" data-d="-1" data-k="'+k+'" aria-label="'+t.minus+lab+'">&minus;</button><output aria-live="polite">'+qty[k]+'</output><button type="button" data-d="1" data-k="'+k+'" aria-label="'+t.plus+lab+'">+</button></span>'};
   var h='<div class="grid">'+PAPAS.map(function(p){var f=rowF[p.n]||'C',k=p.n+'|'+f,lab=esc(p.n),on=qty[k]>0;
-    return '<article class="card'+(on?' on':'')+'"><div class="hd2"><h3>'+lab+'</h3><span class="price">'+t.price+'</span></div><p>'+esc(p[L])+'</p>'+
+    return '<article class="card'+(on?' on':'')+'"><div class="hd2"><h3>'+lab+'</h3>'+(t.price?'<span class="price">'+t.price+'</span>':'')+'</div><p>'+esc(p[L])+'</p>'+
       '<div class="row"><span class="sw" role="group" aria-label="'+t.o_fmt+': '+lab+'" data-f="'+f+'">'+FMT.map(function(x){return '<button type="button" data-sw="'+esc(p.n)+'" data-fk="'+x.k+'" aria-pressed="'+String(x.k===f)+'">'+t['sw_'+x.k]+'</button>'}).join('')+'</span>'+ctl(k,lab)+'</div>'+
-      (on?'<label class="sl"><span>'+t.o_sauce+'</span><select data-sk="'+esc(k)+'" aria-label="'+t.o_sauce+': '+lab+'">'+SAUCES[L].map(function(x,i){return '<option value="'+i+'"'+(i===(sauceBy[k]===undefined?3:sauceBy[k])?' selected':'')+'>'+esc(x)+'</option>'}).join('')+'</select></label>':'')+'</article>'}).join('')+'</div>'+
+      '<div class="ch" role="group" aria-label="'+t.o_sauce+': '+lab+'">'+SAUCES[L].map(function(x,i){return '<button type="button" data-sa="'+i+'" data-sp="'+esc(p.n)+'" aria-pressed="'+String(i===sa(k))+'">'+esc(x)+'</button>'}).join('')+'</div>'+(sa(k)===4?'':'<p class="sd">'+esc(SAUCED[L][sa(k)])+'</p>')+'</article>'}).join('')+'</div>'+
     '<h3 class="dh">'+t.o_dr+'</h3><div class="dl">'+DRINKS[L].map(function(d,i){var dr=DR[i],k=dr?'D|'+dr.n:null;
-    return '<div class="dr"><div class="dn"><b>'+esc(d[0])+'</b>'+(d[1]?'<small>'+esc(d[1])+'</small>':'')+'</div><span class="price">'+t.price+'</span>'+(k?ctl(k,esc(d[0])):'')+'</div>'}).join('')+'</div>';
+    return '<div class="dr"><div class="dn"><b>'+esc(d[0])+'</b>'+(d[1]?'<small>'+esc(d[1])+'</small>':'')+'</div>'+(t.price?'<span class="price">'+t.price+'</span>':'')+(k?ctl(k,esc(d[0])):'')+'</div>'}).join('')+'</div>';
   $('#lines').innerHTML=h;
   renderSum();
 }
@@ -464,7 +482,7 @@ function fillPay(){
 function payUI(){var sel=$('#o-pay'),p=$('#pay');if(!p||!sel)return;p.hidden=sel.selectedIndex!==0;$('#pcopy').hidden=$('#pn').textContent.charAt(0)==='['}
 function msg(){
   payUI();status();put(sessionStorage,KS,snap());
-  var t=T[L],lines=[];PAPAS.forEach(function(p){FMT.forEach(function(f){var k=p.n+'|'+f.k,c=qty[k];if(c>0)lines.push(c+' x '+p.n+' ('+f.msg+'), '+t.m_sauce.toLowerCase()+': '+SAUCES[L][sauceBy[k]===undefined?3:sauceBy[k]])})});
+  var t=T[L],lines=[];PAPAS.forEach(function(p){FMT.forEach(function(f){var k=p.n+'|'+f.k,c=qty[k];if(c>0)lines.push(c+' x '+p.n+' ('+f.msg+'), '+(sa(k)===4?SAUCES[L][4].toLowerCase():t.m_sauce.toLowerCase()+': '+SAUCES[L][sa(k)]))})});
   DR.forEach(function(d){var c=qty['D|'+d.n];if(c>0)lines.push(c+' x '+d.n)});
   if(!lines.length){$('#o-msg').value=t.m_empty;setWa(false,'');if(missOn)showMissP(false);return}
   var out=[mode==='Retiro'?t.m_hi_r:t.m_hi].concat(lines);
@@ -491,21 +509,20 @@ $('#b-en').addEventListener('click',function(){L='en';try{localStorage.setItem('
 var tt;function toast(m){var el=$('#toast');el.textContent=m;el.hidden=false;clearTimeout(tt);tt=setTimeout(function(){el.hidden=true},2200)}
 $('#lines').addEventListener('click',function(e){
   var b=e.target.closest('button');if(!b)return;
-  if(b.dataset.sw){var n=b.dataset.sw,w=b.dataset.fk,o=rowF[n]||'C';if(o===w)return;rowF[n]=w;qty[n+'|'+w]=qty[n+'|'+o];qty[n+'|'+o]=0;if(sauceBy[n+'|'+o]!==undefined){sauceBy[n+'|'+w]=sauceBy[n+'|'+o];delete sauceBy[n+'|'+o]}
+  if(b.dataset.sa!==undefined){var sp=b.dataset.sp,v=Number(b.dataset.sa);if(v===3)delete sauceBy[sp];else sauceBy[sp]=v;renderLines();msg();var f2=document.querySelector('#lines [data-sp="'+sp+'"][data-sa="'+v+'"]');if(f2)f2.focus();return}
+  if(b.dataset.sw){var n=b.dataset.sw,w=b.dataset.fk,o=rowF[n]||'C';if(o===w)return;rowF[n]=w;qty[n+'|'+w]=qty[n+'|'+o];qty[n+'|'+o]=0;
     renderLines();msg();var f1=document.querySelector('#lines [data-sw="'+n+'"][data-fk="'+w+'"]');if(f1)f1.focus();return}
-  var k=b.dataset.k;if(!k)return;qty[k]=Math.max(0,Math.min(20,qty[k]+Number(b.dataset.d)));if(!qty[k])delete sauceBy[k];
+  var k=b.dataset.k;if(!k)return;qty[k]=Math.max(0,Math.min(20,qty[k]+Number(b.dataset.d)));
   renderLines();msg();
   var f=document.querySelector('#lines button[data-k="'+k+'"][data-d="'+b.dataset.d+'"]');if(f)f.focus();
 });
-$('#lines').addEventListener('change',function(e){var k=e.target.dataset.sk;if(k===undefined)return;sauceBy[k]=Number(e.target.value);renderSum();msg()});
 ['#o-pay','#o-name','#o-addr','#o-hora','#o-note'].forEach(function(s){$(s).addEventListener('input',msg)});
 Array.prototype.forEach.call(document.getElementsByName('mo'),function(r){r.addEventListener('change',function(){if(r.checked){setMode(r.value);msg()}})});
 setInterval(function(){msg()},60000);
-$('#sumry').addEventListener('change',function(e){var k=e.target.dataset.sk;if(k===undefined)return;sauceBy[k]=Number(e.target.value);msg()});
 $('#sumry').addEventListener('click',function(e){
   var b=e.target.closest('button');if(!b)return;
-  if(b.dataset.rm){qty[b.dataset.rm]=0;delete sauceBy[b.dataset.rm]}
-  else if(b.dataset.d&&b.parentNode.dataset.k){var kk=b.parentNode.dataset.k;qty[kk]=Math.max(0,Math.min(20,qty[kk]+Number(b.dataset.d)));if(!qty[kk])delete sauceBy[kk];renderLines();msg();var ff=document.querySelector('#sumry .ctl[data-k="'+kk+'"] button[data-d="'+b.dataset.d+'"]');if(ff)ff.focus();return}
+  if(b.dataset.rm){qty[b.dataset.rm]=0}
+  else if(b.dataset.d&&b.parentNode.dataset.k){var kk=b.parentNode.dataset.k;qty[kk]=Math.max(0,Math.min(20,qty[kk]+Number(b.dataset.d)));renderLines();msg();var ff=document.querySelector('#sumry .ctl[data-k="'+kk+'"] button[data-d="'+b.dataset.d+'"]');if(ff)ff.focus();return}
   else if(b.dataset.clear){Object.keys(qty).forEach(function(k){qty[k]=0});sauceBy={}}
   else return;
   renderLines();msg();
@@ -538,7 +555,7 @@ $('#copy').addEventListener('click',function(){
   if(!ready()){showMissP(true);return}
   var ta=$('#o-msg'),t=T[L];
   saveLast();updateRep();
-  function fallback(){ta.focus();ta.select();$('#ok').textContent=t.sel}
+  function fallback(){ta.removeAttribute('aria-hidden');ta.focus();ta.select();var okc=false;try{okc=document.execCommand('copy')}catch(x){}ta.setAttribute('aria-hidden','true');ta.blur();$('#ok').textContent=okc?t.copied:t.sel}
   if(navigator.clipboard&&navigator.clipboard.writeText){
     navigator.clipboard.writeText(ta.value).then(function(){$('#ok').textContent=t.copied},fallback);
   }else fallback();
@@ -556,7 +573,7 @@ var SOCIAL=[
  document.getElementById('soc').innerHTML=h})();
 var saved=got(sessionStorage,KS);if(restore(saved)){}else saved=null;
 applyLang();restoreFields(saved);if(saved){renderLines();msg()}
-if('IntersectionObserver' in window){new IntersectionObserver(function(en){ordInView=en[0].isIntersecting;updBars()},{threshold:.15}).observe($('#express'))}
+if('IntersectionObserver' in window){new IntersectionObserver(function(en){ordInView=en[0].isIntersecting;updBars()},{threshold:.15}).observe($('#resumen'))}
 })();
 </script>
 
