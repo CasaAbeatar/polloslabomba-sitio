@@ -43,8 +43,9 @@ a{color:inherit}
 .skip{position:absolute;left:8px;top:-60px;z-index:20;background:var(--gold);color:var(--gold-ink);font-weight:700;padding:12px 18px;border-radius:10px}
 .skip:focus{top:8px}
 .ns{margin:0;padding:12px 20px;background:var(--gold);color:var(--gold-ink);font-weight:700}
-.sites{background:#000;display:flex;justify-content:center;flex-wrap:wrap;gap:2px;padding:0 8px}
-.sites a{border-radius:0;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-family:inherit;font-weight:700;font-size:15px;text-decoration:none;color:#fff;border-bottom:3px solid transparent}
+.sites{background:#000;display:flex;justify-content:center;flex-wrap:wrap;gap:2px;padding:0 4px}
+.sites a{border-radius:0;display:inline-flex;align-items:center;gap:5px;min-height:44px;padding:0 6px;font-family:inherit;font-weight:700;font-size:14px;text-decoration:none;color:#fff;border-bottom:3px solid transparent}
+.sites img{width:20px;height:20px;border-radius:5px;flex:none}
 .sites a:hover,.sites a:focus-visible{background:rgba(255,255,255,.14)}
 .sites a[aria-current="page"]{color:#F3A62C;border-bottom-color:#F3A62C}
 header.top{position:sticky;top:0;z-index:10;background:var(--bar);color:var(--bar-fg);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 12px;padding:4px 14px}
@@ -94,7 +95,7 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 .bar{background:var(--bar);color:var(--bar-fg);font-size:14px;font-weight:700;text-align:center;padding:12px 20px}
 @media (max-width:700px){.split{grid-template-columns:1fr;grid-auto-rows:auto}.half{padding:26px 20px;gap:12px}.logo img{width:128px}.btn{min-height:48px;padding:0 18px;font-size:16px}.right h2{font-size:52px}.right .soon{display:none}}
 </style>
-<nav class="sites" aria-label="Nuestros negocios"><a href="index.html" aria-current="page" data-track="sites-pollos">Pollos La Bomba</a><a href="papea/index.html" data-track="sites-papea">Papea</a><a href="https://www.sodalabomba.com" data-track="sites-soda">Soda La Bomba</a></nav>
+<nav class="sites" aria-label="Nuestros negocios"><a href="index.html" aria-current="page" data-track="sites-pollos"><img src="img/favicon-48.png" alt="" width="22" height="22">Pollos La Bomba</a><a href="papea/index.html" data-track="sites-papea">Papea</a><a href="https://www.sodalabomba.com" data-track="sites-soda"><img src="img/favicon-soda-48.png" alt="" width="22" height="22">Soda La Bomba</a></nav>
 <main class="split" id="inicio">
 <section class="half left" aria-labelledby="t-pollos">
 <span class="tag">Horquetas de Sarapiquí</span>
