@@ -25,7 +25,7 @@
 </script>
 </head>
 <body>
-<a class="skip" href="#papea">Saltar a Papea</a>
+<a class="skip" href="#papea" data-en="Skip to Papea">Saltar a Papea</a>
 <noscript><p class="ns">Esta página funciona mejor con JavaScript, pero puedes llamar al 7277-7303 o abrir el menú de <a href="papea/index.html">Papea</a>.</p></noscript>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,12 +48,6 @@ a{color:inherit}
 .sites img{width:20px;height:20px;border-radius:5px;flex:none}
 .sites a:hover,.sites a:focus-visible{background:rgba(255,255,255,.14)}
 .sites [aria-current="page"]{color:#F3A62C;border-bottom-color:#F3A62C}
-header.top{position:sticky;top:0;z-index:10;background:var(--bar);color:var(--bar-fg);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 12px;padding:4px 14px}
-header.top .brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:800;font-size:15px;text-decoration:none}
-header.top .brand img{width:32px;height:32px;border-radius:7px}
-header.top nav{display:flex;gap:2px}
-header.top nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-weight:700;font-size:15px;text-decoration:none;border-radius:8px}
-header.top nav a:hover{background:rgba(255,255,255,.12)}
 .hrs{margin:0;font-weight:800;font-size:17px}
 .bar a{display:inline-flex;align-items:center;min-height:44px;font-weight:800}
 .bar p{margin:0}
@@ -92,49 +86,77 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 .left .btn.gold{background:var(--gold);color:var(--gold-ink)}
 .left .btn.line{border-color:var(--left-fg);color:var(--left-fg)}
 .left .lema{color:var(--gold)}
-.bar{background:var(--bar);color:var(--bar-fg);font-size:14px;font-weight:700;text-align:center;padding:12px 20px}
+.bar{background:var(--bar);color:var(--bar-fg);font-size:14px;font-weight:700;text-align:center;padding:16px 20px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.bar b{font-size:15px;text-transform:uppercase;letter-spacing:.04em}
+.bar p{margin:0;font-weight:400;opacity:.9}
+.hd{position:sticky;top:0;z-index:20;background:var(--bar);border-bottom:1px solid #2a2222}
+.hd1{display:flex;align-items:center;gap:6px;padding:6px 12px;max-width:1100px;margin:0 auto}
+.hlogo{display:flex;align-items:center;margin-right:auto;min-width:48px;min-height:44px;justify-content:center}
+.hlogo img{height:44px;width:auto;display:block}
+.lg{display:inline-flex;gap:4px;margin-left:4px}
+.lg button{min-width:44px;min-height:44px;border-radius:10px;border:2px solid var(--fg);background:transparent;color:var(--fg);font:800 15px var(--body);cursor:pointer}
+.lg button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.hd.nologo .hlogo{visibility:hidden}
+.ic{flex:none;margin-right:8px}
+.addr{margin:0;max-width:420px;font-size:16px}
 @media (max-width:700px){.split{grid-template-columns:1fr;grid-auto-rows:auto}.half{padding:26px 20px;gap:12px}.logo img{width:128px}.btn{min-height:48px;padding:0 18px;font-size:16px}.right h2{font-size:52px}.right .soon{display:none}}
 .st{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 10px;padding:5px 12px 6px;font-size:13px;font-weight:700;background:#000;color:#fff;text-align:center}
 .st .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3ba55d;margin-right:6px}
 .st[data-e="0"] .dot{background:#F3A62C}
 .st[hidden]{display:none}
 </style>
-<nav class="sites" aria-label="Nuestros negocios"><a href="papea/index.html" data-track="sites-papea">Papea</a><a href="https://www.sodalabomba.com" data-track="sites-soda"><img src="img/favicon-soda-48.png" alt="" width="22" height="22">Soda La Bomba</a></nav>
+<nav class="sites" aria-label="Nuestros negocios" data-en-aria="Our businesses"><a href="papea/index.html" data-track="sites-papea">Papea</a><a href="https://www.sodalabomba.com" data-track="sites-soda"><img src="img/favicon-soda-48.png" alt="" width="22" height="22">Soda La Bomba</a></nav>
 <div class="st" id="st" role="status" aria-live="polite" data-e="0"></div>
+<header class="hd nologo" id="top">
+<div class="hd1">
+<a class="hlogo" href="#top" data-up="1" aria-label="Pollos La Bomba, volver al inicio" data-en-aria="Pollos La Bomba, back to the top"><img src="img/logo-pollos-amarillo.png" width="700" height="701" alt=""></a>
+<div class="lg" role="group" aria-label="Idioma"><button type="button" id="b-es" aria-pressed="true" aria-label="Español" title="Español">ES</button><button type="button" id="b-en" aria-pressed="false" aria-label="English" title="English">EN</button></div>
+</div>
+</header>
 <main class="split" id="inicio">
 <section class="half left" aria-labelledby="t-pollos">
-<span class="tag">Empresa familiar desde 2012</span>
+<span class="tag" data-en="Family business since 2012">Empresa familiar desde 2012</span>
 <h1 id="t-pollos" class="logo"><img src="img/logo-pollos-amarillo.png" width="700" height="701" alt="Pollos La Bomba"></h1>
-<p class="lema" id="abre">Abrimos el sábado 14 de noviembre</p>
-<p class="hrs">Todos los días de 10 a. m. a 10 p. m.</p>
+<p class="lema" id="abre" data-en="We open Saturday, November 14">Abrimos el sábado 14 de noviembre</p>
+<p class="hrs" data-en="Every day, 10 a.m. to 10 p.m.">Todos los días de 10 a. m. a 10 p. m.</p>
+<p class="addr" data-en="On Route 4, Horquetas de Sarapiquí.&lt;br&gt;Across from Soda La Bomba and the JyJ gas station.">Sobre Ruta 4, Horquetas de Sarapiquí.<br>Frente a Soda La Bomba y la Gasolinera JyJ.</p>
 <div class="btns">
-<a class="btn gold" data-track="entrada-como-llegar" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener">Google Maps</a>
-<a class="btn line" data-track="entrada-waze" href="https://waze.com/ul?ll=10.333714181537344,-83.95064152587013&navigate=yes&zoom=17" target="_blank" rel="noopener">Waze</a>
-<a class="btn line" id="call" data-track="entrada-llamar" href="tel:+50672777303">Llamar al 7277-7303</a>
+<a class="btn gold" data-track="entrada-como-llegar" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Google Maps</span></a>
+<a class="btn line" data-track="entrada-waze" href="https://waze.com/ul?ll=10.333714181537344,-83.95064152587013&navigate=yes&zoom=17" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Waze</span></a>
+<a class="btn line" id="call" data-track="entrada-llamar" href="tel:+50672777303"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span data-en="Call 7277-7303">Llamar al 7277-7303</span></a>
 </div>
 </section>
 <a class="half right" id="papea" href="papea/index.html" data-track="entrada-papea" aria-labelledby="t-papea">
-<span class="tag">Nuevo</span>
+<span class="tag" data-en="New">Nuevo</span>
 <h2 id="t-papea">Papea</h2>
 <p class="lema">Pura papa, pura vida.</p>
-<p class="soon" style="max-width:320px">Papas fritas en cono y Caja Bomba. Ve el menú y arma tu pedido.</p>
-<span class="btn">Ver menú y pedir</span>
+<p class="soon" style="max-width:320px" data-en="Fries in a cone or Caja Bomba. See the menu and build your order.">Papas fritas en cono y Caja Bomba. Ve el menú y arma tu pedido.</p>
+<span class="btn" data-en="See menu and order">Ver menú y pedir</span>
 </a>
 </main>
 <section class="fam" aria-labelledby="t-fam">
-<p class="lead" id="t-fam">Somos una empresa familiar con <span data-years>14</span> años en la Ruta 4, en Horquetas de Sarapiquí. Desde 2012 atendemos con el sabor casero de siempre.</p>
+<p class="lead" id="t-fam" data-en="We are a family business with &lt;span data-years&gt;14&lt;/span&gt; years on Route 4, in Horquetas de Sarapiquí. Since 2012 we have served with the home-style flavor you know.">Somos una empresa familiar con <span data-years>14</span> años en la Ruta 4, en Horquetas de Sarapiquí. Desde 2012 atendemos con el sabor casero de siempre.</p>
 <div class="fcs">
-<a class="fc" data-track="fam-soda" href="https://www.sodalabomba.com"><b>Soda La Bomba</b><span>Abierta las 24 horas, todos los días.</span><span class="go">Visitar →</span></a>
+<a class="fc" data-track="fam-soda" href="https://www.sodalabomba.com"><b>Soda La Bomba</b><span data-en="Home-style and fast food. Open 24 hours.">Comida casera y rápida. Abierta las 24 horas.</span><span class="go" data-en="Visit →">Visitar →</span></a>
 </div>
-<p class="lead zona">Express a domicilio en todos nuestros negocios: unos 10 km a la redonda. Por la vía hacia Puerto Viejo, hasta La Chaves. Por la vía hacia Río Frío y el cruce, hasta Colonia Cubujuquí.</p>
+<p class="lead zona" data-en="Express delivery from all our businesses: about 10 km around us. Along the road to Puerto Viejo, as far as La Chaves. Along the road to Río Frío and the junction, as far as Colonia Cubujuquí.">Express a domicilio en todos nuestros negocios: unos 10 km a la redonda. Por la vía hacia Puerto Viejo, hasta La Chaves. Por la vía hacia Río Frío y el cruce, hasta Colonia Cubujuquí.</p>
 </section>
-<footer class="bar">
-<p>Frente a Soda La Bomba y la Gasolinera JyJ, Horquetas de Sarapiquí.</p>
-</footer>
+<footer class="bar"><b>Pollos La Bomba</b><a href="#top" data-up="1" data-en="↑ Back to top">↑ Volver arriba</a></footer>
 
 <script>
 function ys(){var y=(function(){var d=new Date(),y=d.getFullYear()-2012;if(d<new Date(d.getFullYear(),8,30))y--;return y})();document.querySelectorAll('[data-years]').forEach(function(e){e.textContent=y})}
 ys();
+var L='es';try{if(localStorage.getItem('pl_lang')==='en')L='en'}catch(e){}
+function applyLang(){document.documentElement.lang=L;
+document.querySelectorAll('[data-en]').forEach(function(e){if(e.dataset.es===undefined)e.dataset.es=e.innerHTML;e.innerHTML=(L==='en'?e.getAttribute('data-en'):e.dataset.es)});
+document.querySelectorAll('[data-en-aria]').forEach(function(e){if(e.dataset.esAria===undefined)e.dataset.esAria=e.getAttribute('aria-label');e.setAttribute('aria-label',L==='en'?e.getAttribute('data-en-aria'):e.dataset.esAria)});
+document.getElementById('b-es').setAttribute('aria-pressed',String(L==='es'));document.getElementById('b-en').setAttribute('aria-pressed',String(L==='en'));
+ys();if(window.stUpdate)window.stUpdate()}
+function setLang(l){L=l;try{localStorage.setItem('pl_lang',l)}catch(e){}applyLang()}
+document.getElementById('b-es').addEventListener('click',function(){setLang('es')});document.getElementById('b-en').addEventListener('click',function(){setLang('en')});
+document.addEventListener('click',function(e){var u=e.target.closest('[data-up]');if(u){e.preventDefault();window.scrollTo({top:0})}});
+(function(){var h=document.getElementById('top'),l=document.querySelector('.left .logo img');if(!h||!l)return;if(!('IntersectionObserver' in window)){h.classList.remove('nologo');return}
+new IntersectionObserver(function(e){h.classList.toggle('nologo',e[0].isIntersecting)},{rootMargin:'-57px 0px 0px 0px'}).observe(l)})();
 /* Analítica opcional y sin cookies (GoatCounter). Para activarla: crear cuenta gratis en goatcounter.com y poner aquí el código del sitio. Vacío: no se carga nada. */
 var GC='';
 function track(n){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:n,event:true})}catch(e){}}
@@ -144,12 +166,13 @@ if(GC){var g=document.createElement('script');g.async=true;g.src='//gc.zgo.at/co
 <script>
 (function(){var el=document.getElementById('st');if(!el)return;
 function cr(){return new Date(Date.now()-6*3600*1000)}
-window.stUpdate=function(){var en=false,d=cr(),m=d.getUTCHours()*60+d.getUTCMinutes(),pre=d.getTime()<Date.UTC(2026,10,14),o=m>=600&&m<1320,t;
+window.stUpdate=function(){var en=document.documentElement.lang==='en',d=cr(),m=d.getUTCHours()*60+d.getUTCMinutes(),pre=d.getTime()<Date.UTC(2026,10,14),o=m>=600&&m<1320,t;
 var ab=document.getElementById('abre');if(ab)ab.hidden=!pre;el.hidden=pre;if(pre){return}
 if(false){}
 else if(o){t=['1',en?'Open until 10 p. m. · Express until 10 p. m.':'Abierto hasta las 10 p. m. · Express hasta las 10 p. m.']}
 else{t=['0',en?'Closed, opens at 10 a. m. · Express too':'Cerrado, abre a las 10 a. m. · Express también']}
 el.dataset.e=t[0];el.innerHTML='<span><span class="dot"></span>'+t[1]+'</span>'};
+if(typeof applyLang==='function'&&L==='en')applyLang();
 window.stUpdate();setInterval(window.stUpdate,60000)})();
 </script>
 </body>
