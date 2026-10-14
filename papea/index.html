@@ -133,7 +133,7 @@ nav a:hover{background:rgba(255,255,255,.12)}
 .brands .cur::before{content:"/";margin-right:10px;color:var(--ink-fg);opacity:.5;font-weight:400}
 nav.main a[aria-current="true"]{background:rgba(255,255,255,.16)}
 nav.main{order:2;margin-left:auto}
-.lang{order:3;display:flex;gap:6px}
+.lang{order:3;display:flex;gap:6px;margin-left:auto}
 @media (max-width:640px){header.top .wrap{gap:0 10px}.brands{flex-basis:100%}nav.main{order:4;flex:1 1 auto;margin-left:0}nav.main a{padding:0 10px}.lang{order:5;margin-left:auto}}
 .lang button{font-family:var(--body);background:transparent;border:2px solid var(--ink-fg);cursor:pointer;min-width:56px;min-height:48px;font-size:17px;font-weight:800;justify-content:center}
 .lang button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
@@ -222,14 +222,9 @@ footer b{font-family:var(--display);font-weight:800;font-size:22px;text-transfor
 </style>
 
 <a class="skip" href="#menu" data-i18n="skip">Saltar al menú</a>
-<nav class="sites" aria-label="Nuestros negocios" data-i18n-aria="sites_aria"><a href="../index.html" data-track="sites-pollos"><img src="../img/favicon-48.png" alt="" width="22" height="22">Pollos La Bomba</a><span aria-current="page">Papea</span><a href="https://www.sodalabomba.com" data-track="sites-soda"><img src="../img/favicon-soda-48.png" alt="" width="22" height="22">Soda La Bomba</a></nav>
+<nav class="sites" aria-label="Nuestros negocios" data-i18n-aria="sites_aria"><a href="../index.html" data-track="sites-pollos"><img src="../img/favicon-48.png" alt="" width="22" height="22">Pollos La Bomba</a><a href="https://www.sodalabomba.com" data-track="sites-soda"><img src="../img/favicon-soda-48.png" alt="" width="22" height="22">Soda La Bomba</a></nav>
 <header class="top">
 <div class="wrap">
-<nav class="main" aria-label="Principal">
-<a href="#menu" data-i18n="nav_menu">Menú</a>
-<a href="#express" data-i18n="nav_express">Express</a>
-<a href="#donde" data-i18n="nav_donde">Dónde</a>
-</nav>
 <div class="lang" role="group" aria-label="Idioma">
 <button type="button" id="b-es" aria-pressed="true" aria-label="Español" title="Español">ES</button>
 <button type="button" id="b-en" aria-pressed="false" aria-label="English" title="English">EN</button>
