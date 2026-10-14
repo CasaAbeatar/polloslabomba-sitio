@@ -97,6 +97,7 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 .st{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 10px;padding:5px 12px 6px;font-size:13px;font-weight:700;background:#000;color:#fff;text-align:center}
 .st .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3ba55d;margin-right:6px}
 .st[data-e="0"] .dot{background:#F3A62C}
+.st[hidden]{display:none}
 </style>
 <nav class="sites" aria-label="Nuestros negocios"><a href="papea/index.html" data-track="sites-papea">Papea</a><a href="https://www.sodalabomba.com" data-track="sites-soda"><img src="img/favicon-soda-48.png" alt="" width="22" height="22">Soda La Bomba</a></nav>
 <div class="st" id="st" role="status" aria-live="polite" data-e="0"></div>
@@ -104,7 +105,7 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 <section class="half left" aria-labelledby="t-pollos">
 <span class="tag">Horquetas de Sarapiquí</span>
 <h1 id="t-pollos" class="logo"><img src="img/logo-pollos-amarillo.png" width="700" height="701" alt="Pollos La Bomba"></h1>
-<p class="lema">Abrimos el sábado 14 de noviembre</p>
+<p class="lema" id="abre">Abrimos el sábado 14 de noviembre</p>
 <p class="hrs">Todos los días de 10 a. m. a 10 p. m.</p>
 <div class="btns">
 <a class="btn gold" data-track="entrada-como-llegar" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener">Google Maps</a>
@@ -144,7 +145,8 @@ if(GC){var g=document.createElement('script');g.async=true;g.src='//gc.zgo.at/co
 (function(){var el=document.getElementById('st');if(!el)return;
 function cr(){return new Date(Date.now()-6*3600*1000)}
 window.stUpdate=function(){var en=false,d=cr(),m=d.getUTCHours()*60+d.getUTCMinutes(),pre=d.getTime()<Date.UTC(2026,10,14),o=m>=600&&m<1320,t;
-if(pre){t=['0',en?'We open Saturday, November 14':'Abrimos el sábado 14 de noviembre']}
+var ab=document.getElementById('abre');if(ab)ab.hidden=!pre;el.hidden=pre;if(pre){return}
+if(false){}
 else if(o){t=['1',en?'Open until 10 p. m. · Express until 10 p. m.':'Abierto hasta las 10 p. m. · Express hasta las 10 p. m.']}
 else{t=['0',en?'Closed, opens at 10 a. m. · Express too':'Cerrado, abre a las 10 a. m. · Express también']}
 el.dataset.e=t[0];el.innerHTML='<span><span class="dot"></span>'+t[1]+'</span>'};
