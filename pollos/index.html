@@ -220,6 +220,7 @@ a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.
 .topbar{display:flex;align-items:center;background:#000}.topbar .sites{flex:1 1 auto;min-width:0}.topbar .lg,.topbar .lang{margin:0 6px 0 0;display:flex;gap:4px}.topbar .lg button,.topbar .lang button{min-width:48px;min-height:44px;padding:0 10px;font-size:15px;font-weight:800;color:#fff;background:transparent;border:2px solid #fff;border-radius:10px;cursor:pointer;font-family:inherit}.topbar .lg button[aria-pressed="true"],.topbar .lang button[aria-pressed="true"]{display:none}
 .hd{position:fixed;left:0;right:0;top:0}.hd.nologo{transform:translateY(-100%);visibility:hidden}
 .nos{max-width:560px;margin:22px auto 0;text-align:center}.nos h2{font-size:18px;margin:0 0 8px;letter-spacing:.06em}.nos p{margin:0 0 10px;font-size:16px}.nos .ref{font-weight:800;font-size:18px;margin-top:14px}.nos .ref s{opacity:.75}
+.gin{margin:12px 0 6px;display:flex;flex-direction:column;gap:6px}.gin label{font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.gbox{display:flex;align-items:center;gap:10px}.gbox input{flex:1;min-width:0;min-height:56px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--fg);font:inherit;font-size:20px;font-weight:700;padding:0 14px}.gbox input:focus{outline:3px solid var(--red);outline-offset:1px}.gbox span{font-weight:800;font-size:18px;color:var(--fg)}.gnt{white-space:pre-line;margin:0;color:var(--muted);font-size:14px}.sh .go:disabled{opacity:.45;cursor:not-allowed}
 </style>
 <link rel="preconnect" href="https://casaabeatar.github.io" crossorigin>
 <link rel="stylesheet" href="https://casaabeatar.github.io/carrito-la-bomba/v1/carrito.css">
@@ -339,10 +340,10 @@ var MENU=[
  ]}
 ]},
 {t:'Chicharrón',g:[
- {h:'Chicharrón',n:'Elige el tipo y la cantidad. Incluye banano y limón.',i:[
-  ['Chicharrón de carne',['500 g '+m('4.250'),'700 g '+m('5.950'),'1 kg '+m('8.500'),'1,5 kg '+m('12.750')]],
-  ['Chicharrón de concha',['500 g '+m('4.800'),'700 g '+m('6.720'),'1 kg '+m('9.600'),'1,5 kg '+m('14.400')]],
-  ['Chicharrón BBQ',['500 g '+m('4.750'),'700 g '+m('6.650'),'1 kg '+m('9.500'),'1,5 kg '+m('14.250')]]
+ {h:'Chicharrón',n:'Se vende por kilo. Incluye banano y limón.',i:[
+  ['Chicharrón de carne',[],'Elige la cantidad o escribe los gramos.',[],{kg:8500}],
+  ['Chicharrón de concha',[],'Elige la cantidad o escribe los gramos.',[],{kg:9600}],
+  ['Chicharrón BBQ',[],'Elige la cantidad o escribe los gramos.',[],{kg:9500}]
  ]}
 ]},
 {t:'Extras',g:[
@@ -364,7 +365,7 @@ var WA='50672777303',KS='pl_cart';
 function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function $(q){return document.querySelector(q)}
 var L='es';try{if(localStorage.getItem('pl_lang')==='en')L='en'}catch(e){}
-var EN={"Marca": "Brand", "Otra, la confirmamos": "Another, we confirm it", "Te escribimos para confirmar la bebida.": "We message you to confirm the drink.", "desde": "from", "Elige una opción": "Choose an option", "Agregar al pedido": "Add to order", "Cerrar": "Close", "agregado a tu pedido": "added to your order", "Copiar número": "Copy number", "Falta": "Missing", "al menos un producto": "at least one product", "tu nombre": "your name", "la dirección de entrega": "the delivery address", "Consúltalo en las notas o por WhatsApp": "Ask about it in the notes or on WhatsApp", "Quitar uno": "Remove one", "Agregar uno": "Add one", "Agregar": "Add", "opciones": "options", "Quitar": "Remove", "Total productos": "Products total", "No incluye envío. Te confirmamos el costo por WhatsApp.": "Shipping not included. We confirm the cost on WhatsApp.", "Borrar pedido": "Clear order", "Aún no has agregado nada. Elige del menú de arriba.": "You have not added anything yet. Pick something from the menu above.", "producto": "item", "productos": "items", "Copiado": "Copied", "Copiar pedido": "Copy order", "Sin resultados para": "No results for", "Prueba con otra palabra, o escríbelo en las notas del pedido.": "Try another word, or write it in the order notes.", "Ver categoría": "See category", "resultados": "results", "resultado": "result", "Pollo": "Chicken", "Para llevar": "Takeaway", "Te escribimos para confirmar el sabor.": "We message you to confirm the flavor.", "Cadera": "Thigh", "Más": "More", "Res": "Beef", "Papas": "Fries", "Chicharrón": "Pork rind", "Alitas 5x": "Wings, 5 pieces", "Alitas BBQ 5x": "BBQ wings, 5 pieces", "Bebidas": "Drinks", "Refresco natural": "Natural fruit drink", "Gaseosas": "Sodas", "sola": "alone", "solas": "alone", "entero": "whole", "plato": "plate", "pequeño": "small", "carne": "beef", "concha": "shell", "BBQ": "BBQ", "pechuga": "breast", "cadera": "thigh", "muslo": "drumstick", "Pollo frito": "Fried chicken", "Pollo asado": "Roast chicken", "Más de la casa": "More from the house", "Extras": "Extras", "Cuartos": "Quarters", "Entero": "Whole", "Alitas": "Wings", "Pechuga y ala, o cadera y muslo.": "Breast and wing, or thigh and drumstick.", "Cuarto de pechuga": "Breast quarter", "Cuarto de pierna": "Leg quarter", "Pechuga y ala.": "Breast and wing.", "Cadera y muslo.": "Thigh and drumstick.", "Cuarto de pechuga asado": "Roast breast quarter", "Cuarto de pierna asado": "Roast leg quarter", "Pechuga y ala, asadas.": "Roast breast and wing.", "Cadera y muslo, asados.": "Roast thigh and drumstick.", "Pollo entero asado": "Whole roast chicken", "Chicharrón de carne": "Pork rind, meat", "Chicharrón de concha": "Pork rind, shell cut", "Chicharrón BBQ": "BBQ pork rind", "Elige el tipo y la cantidad. Incluye banano y limón.": "Choose the type and the amount. Includes banana and lime.", "1,5 kg": "1.5 kg", "Bolsita de ₡500 cada una.": "₡500 per small bag.", "Tortilla palmeada": "Hand-patted tortilla", "Bananitos": "Bananitos (small bananas)", "Chiles en vinagre": "Pickled chiles", "Bolsita.": "Small bag.", "Pollo frito, pollo asado y chicharrón": "Fried chicken, roast chicken and chicharrón", "Pollos La Bomba abre el sábado 14 de noviembre a las 10 a. m. Todavía no recibimos pedidos.": "Pollos La Bomba opens on Saturday, November 14 at 10 a.m. We are not taking orders yet.", "Estamos cerrados ahora. Atendemos todos los días de 10 a. m. a 10 p. m., para llevar y Express.": "We are closed right now. We are open every day from 10 a.m. to 10 p.m., for takeaway and Express."};
+var EN={"por kg": "per kg", "Elige la cantidad": "Choose the amount", "O escribe los gramos": "Or type the grams", "Precio por kilo": "Price per kilo", "Escribe entre 100 y 10.000 gramos.": "Enter between 100 and 10,000 grams.", "Se vende por kilo. Elige la cantidad o escribe los gramos. Incluye banano y limón.": "Sold by the kilo. Choose the amount or type the grams. Includes banana and lime.", "Elige la cantidad o escribe los gramos.": "Choose the amount or type the grams.", "Se vende por kilo. Incluye banano y limón.": "Sold by the kilo. Includes banana and lime.", "Marca": "Brand", "Otra, la confirmamos": "Another, we confirm it", "Te escribimos para confirmar la bebida.": "We message you to confirm the drink.", "desde": "from", "Elige una opción": "Choose an option", "Agregar al pedido": "Add to order", "Cerrar": "Close", "agregado a tu pedido": "added to your order", "Copiar número": "Copy number", "Falta": "Missing", "al menos un producto": "at least one product", "tu nombre": "your name", "la dirección de entrega": "the delivery address", "Consúltalo en las notas o por WhatsApp": "Ask about it in the notes or on WhatsApp", "Quitar uno": "Remove one", "Agregar uno": "Add one", "Agregar": "Add", "opciones": "options", "Quitar": "Remove", "Total productos": "Products total", "No incluye envío. Te confirmamos el costo por WhatsApp.": "Shipping not included. We confirm the cost on WhatsApp.", "Borrar pedido": "Clear order", "Aún no has agregado nada. Elige del menú de arriba.": "You have not added anything yet. Pick something from the menu above.", "producto": "item", "productos": "items", "Copiado": "Copied", "Copiar pedido": "Copy order", "Sin resultados para": "No results for", "Prueba con otra palabra, o escríbelo en las notas del pedido.": "Try another word, or write it in the order notes.", "Ver categoría": "See category", "resultados": "results", "resultado": "result", "Pollo": "Chicken", "Para llevar": "Takeaway", "Te escribimos para confirmar el sabor.": "We message you to confirm the flavor.", "Cadera": "Thigh", "Más": "More", "Res": "Beef", "Papas": "Fries", "Chicharrón": "Pork rind", "Alitas 5x": "Wings, 5 pieces", "Alitas BBQ 5x": "BBQ wings, 5 pieces", "Bebidas": "Drinks", "Refresco natural": "Natural fruit drink", "Gaseosas": "Sodas", "sola": "alone", "solas": "alone", "entero": "whole", "plato": "plate", "pequeño": "small", "carne": "beef", "concha": "shell", "BBQ": "BBQ", "pechuga": "breast", "cadera": "thigh", "muslo": "drumstick", "Pollo frito": "Fried chicken", "Pollo asado": "Roast chicken", "Más de la casa": "More from the house", "Extras": "Extras", "Cuartos": "Quarters", "Entero": "Whole", "Alitas": "Wings", "Pechuga y ala, o cadera y muslo.": "Breast and wing, or thigh and drumstick.", "Cuarto de pechuga": "Breast quarter", "Cuarto de pierna": "Leg quarter", "Pechuga y ala.": "Breast and wing.", "Cadera y muslo.": "Thigh and drumstick.", "Cuarto de pechuga asado": "Roast breast quarter", "Cuarto de pierna asado": "Roast leg quarter", "Pechuga y ala, asadas.": "Roast breast and wing.", "Cadera y muslo, asados.": "Roast thigh and drumstick.", "Pollo entero asado": "Whole roast chicken", "Chicharrón de carne": "Pork rind, meat", "Chicharrón de concha": "Pork rind, shell cut", "Chicharrón BBQ": "BBQ pork rind", "Elige el tipo y la cantidad. Incluye banano y limón.": "Choose the type and the amount. Includes banana and lime.", "1,5 kg": "1.5 kg", "Bolsita de ₡500 cada una.": "₡500 per small bag.", "Tortilla palmeada": "Hand-patted tortilla", "Bananitos": "Bananitos (small bananas)", "Chiles en vinagre": "Pickled chiles", "Bolsita.": "Small bag.", "Pollo frito, pollo asado y chicharrón": "Fried chicken, roast chicken and chicharrón", "Pollos La Bomba abre el sábado 14 de noviembre a las 10 a. m. Todavía no recibimos pedidos.": "Pollos La Bomba opens on Saturday, November 14 at 10 a.m. We are not taking orders yet.", "Estamos cerrados ahora. Atendemos todos los días de 10 a. m. a 10 p. m., para llevar y Express.": "We are closed right now. We are open every day from 10 a.m. to 10 p.m., for takeaway and Express."};
 function S(k){return L==='en'&&EN[k]?EN[k]:k}
 
 var fm=Carrito.fm;
@@ -384,18 +385,20 @@ MENU.forEach(function(c){c.n=0;c.g.forEach(function(g){g.i.forEach(function(x){
    if(gi===x.G.length){var parts=[];if(x.P.length>1&&!/^solas?$|^solo$/.test(p.lb)&&p.lb)parts.push(p.lb);sel.forEach(function(ci,j){parts.push(x.G[j][1][ci])});x.o.push({lb:parts.join(', '),pr:p.pr,pi:pi,sel:sel.slice()});return}
    x.G[gi][1].forEach(function(_,ci){rec(gi+1,sel.concat(ci))})};
   rec(0,[])})}
+ if(x[4]&&x[4].kg){x.W=x[4].kg;x.o=[]}
  x.o.forEach(function(o){o.k=x[0]+'|'+o.lb;ITEMS[o.k]={n:x[0],lb:o.lb,pr:o.pr}});x.id=VAR.length;VAR.push(x);
 })})});
 var qty={};
 function get(s,k){try{return JSON.parse(s.getItem(k))}catch(e){return null}}
 function put(s,k,v){try{s.setItem(k,JSON.stringify(v))}catch(e){}}
 var mode='Express';
-function snap(){return{q:qty,n:$('#f-n').value,a:$('#f-a').value,p:$('#f-p').value,t:$('#f-t').value,m:mode,h:$('#f-h').value}}
+function wItems(){var w={};Object.keys(qty).forEach(function(k){if(ITEMS[k]&&ITEMS[k].w)w[k]=ITEMS[k]});return w}
+function snap(){return{q:qty,w:wItems(),n:$('#f-n').value,a:$('#f-a').value,p:$('#f-p').value,t:$('#f-t').value,m:mode,h:$('#f-h').value}}
 function save(){put(sessionStorage,KS,snap())}
-function restore(o){if(!o)return;qty={};Object.keys(o.q||{}).forEach(function(k){if(ITEMS[k]&&o.q[k]>0)qty[k]=o.q[k]});$('#f-n').value=o.n||'';$('#f-a').value=o.a||'';$('#f-t').value=o.t||'';if(o.p)$('#f-p').value=o.p;$('#f-h').value=o.h||'';setMode(o.m==='Retiro'?'Retiro':'Express')}
+function restore(o){if(!o)return;Object.keys(o.w||{}).forEach(function(k){var v=o.w[k];if(v&&v.w&&typeof v.pr==='number'&&typeof v.n==='string'&&typeof v.lb==='string')ITEMS[k]={n:v.n,lb:v.lb,pr:v.pr,w:1}});qty={};Object.keys(o.q||{}).forEach(function(k){if(ITEMS[k]&&o.q[k]>0)qty[k]=o.q[k]});$('#f-n').value=o.n||'';$('#f-a').value=o.a||'';$('#f-t').value=o.t||'';if(o.p)$('#f-p').value=o.p;$('#f-h').value=o.h||'';setMode(o.m==='Retiro'?'Retiro':'Express')}
 
 /* Menú: categorías y detalle */
-function varRow(x){var n=0;x.o.forEach(function(o){n+=qty[o.k]||0});var mn=Math.min.apply(null,x.o.map(function(o){return o.pr}));
+function varRow(x){if(x.W)return '<div class="op"><span class="ol">'+S('por kg')+'</span><span class="pr">'+fm(x.W)+'</span><span class="ctl"><button type="button" class="add vo" data-vo="'+x.id+'" aria-label="'+S('Agregar')+': '+esc(S(x[0]))+'">'+S('Agregar')+'</button></span></div>';var n=0;x.o.forEach(function(o){n+=qty[o.k]||0});var mn=Math.min.apply(null,x.o.map(function(o){return o.pr}));
  var mx=Math.max.apply(null,x.o.map(function(o){return o.pr}));
  return '<div class="op">'+(mn<mx?'<span class="ol">'+S('desde')+'</span>':'')+'<span class="pr">'+fm(mn)+'</span><span class="ctl"><button type="button" class="add vo" data-vo="'+x.id+'" aria-label="'+S('Agregar')+': '+esc(S(x[0]))+'">'+S('Agregar')+(n?'<span class="bd" aria-hidden="true">'+n+'</span>':'')+'</button></span></div>'}
 function priceHtml(x){return (x[1]||[]).map(function(p){return '<span>'+esc(p)+'</span>'}).join('')}
@@ -406,18 +409,19 @@ function groupsHtml(c,order){
   g.i.forEach(function(x){
    var r='';
    if(order){
-    if(!x.o.length)r='<div class="np">'+S('Consúltalo en las notas o por WhatsApp')+'</div>';
+    if(x.W)r=varRow(x);else if(!x.o.length)r='<div class="np">'+S('Consúltalo en las notas o por WhatsApp')+'</div>';
     else if(x.o.length>1)r=varRow(x);
     else r=x.o.map(function(o){var q=qty[o.k]||0;
      return '<div class="op">'+(o.lb?'<span class="ol">'+esc(S(o.lb))+'</span>':'')+'<span class="pr">'+fm(o.pr)+'</span><span class="ctl" data-k="'+esc(o.k)+'">'+(q?'<button type="button" data-d="-1" aria-label="'+S('Quitar uno')+'">−</button><span class="n">'+q+'</span><button type="button" data-d="1" aria-label="'+S('Agregar uno')+'">+</button>':'<button type="button" class="add" data-d="1">'+S('Agregar')+'</button>')+'</span></div>'}).join('');
    }else r=priceHtml(x);
-   h+='<div class="it'+(order&&!x.o.length?' nop':'')+'"><div class="l"><b>'+esc(S(x[0]))+'</b>'+(x[2]?'<span class="d">'+esc(S(x[2]))+'</span>':'')+'</div><div class="p">'+r+'</div></div>';
+   h+='<div class="it'+(order&&!x.o.length&&!x.W?' nop':'')+'"><div class="l"><b>'+esc(S(x[0]))+'</b>'+(x[2]?'<span class="d">'+esc(S(x[2]))+'</span>':'')+'</div><div class="p">'+r+'</div></div>';
   });
   h+='</div>';
  });
  return h;
 }
 function opsHtml(x){
+ if(x.W)return varRow(x);
  if(!x.o.length)return '<div class="np">'+S('Consúltalo en las notas o por WhatsApp')+'</div>';
  if(x.o.length>1)return varRow(x);
  return x.o.map(function(o){var q=qty[o.k]||0;
@@ -461,7 +465,7 @@ function doSearch(){
  curCat=-1;$('#mdet').hidden=true;$('#mcats').hidden=true;r.hidden=false;
  if(!hits.length){r.innerHTML='<p class="foot">'+S('Sin resultados para')+' "'+esc(v)+'". '+S('Prueba con otra palabra, o escríbelo en las notas del pedido.')+'</p>';return}
  var h='<p class="foot" style="margin:0 0 6px">'+hits.length+' '+S(hits.length===1?'resultado':'resultados')+'</p>';
- hits.slice(0,30).forEach(function(e){h+='<div class="rs'+(e.x.o.length?'':' nop')+'"><div class="l"><b>'+esc(S(e.x[0]))+'</b>'+(e.x[2]?'<span class="d">'+esc(S(e.x[2]))+'</span>':'')+'<span class="w">'+esc(S(MENU[e.k].t))+'</span><button type="button" data-c="'+e.k+'">'+S('Ver categoría')+'</button></div><div class="p">'+opsHtml(e.x)+'</div></div>'});
+ hits.slice(0,30).forEach(function(e){h+='<div class="rs'+(e.x.o.length||e.x.W?'':' nop')+'"><div class="l"><b>'+esc(S(e.x[0]))+'</b>'+(e.x[2]?'<span class="d">'+esc(S(e.x[2]))+'</span>':'')+'<span class="w">'+esc(S(MENU[e.k].t))+'</span><button type="button" data-c="'+e.k+'">'+S('Ver categoría')+'</button></div><div class="p">'+opsHtml(e.x)+'</div></div>'});
  r.innerHTML=h;
 }
 $('#q').addEventListener('input',doSearch);
@@ -499,20 +503,36 @@ function msg(){
 var cur=null,toast=Carrito.toast;
 function stepHTML(n,t,body){return '<div class="stp"><i>'+n+'</i>'+t+'</div><div role="radiogroup" aria-label="'+t+'">'+body+'</div>'}
 function curO(x){if(!x.G.length)return x.o[cur.p];var r=null;x.o.forEach(function(o){if(o.pi===cur.p&&o.sel.join()===cur.s.join())r=o});return r}
-function sheetHTML(){var x=VAR[cur.id],n=0,h='';
- if(x.P.length>1)h+=stepHTML(++n,S('Elige una opción'),x.P.map(function(o,i){return '<button type="button" class="rop" role="radio" aria-checked="'+String(i===cur.p)+'" data-po="'+i+'"><span class="rd"></span><span class="rl"><b>'+esc(S(o.lb))+'</b></span><span class="rp">'+fm(o.pr)+'</span></button>'}).join(''));
+/* Productos que se venden por peso: el cliente elige o escribe los gramos */
+function gLb(g){return g>=1000&&g%100===0?String(g/1000).replace('.',',')+' kg':g+' g'}
+function gS(s){return document.documentElement.lang==='en'?String(s).replace(',','.'):s}
+function gPr(x,g){return Math.round(g*x.W/1000/5)*5}
+function gOk(g){return g>=100&&g<=10000&&g===Math.floor(g)}
+function wBody(x){var g=cur.g;
+ return stepHTML(1,S('Elige la cantidad'),[500,1000,1500].map(function(v){return '<button type="button" class="rop" role="radio" aria-checked="'+String(g===v)+'" data-gq="'+v+'"><span class="rd"></span><span class="rl"><b>'+gS(gLb(v))+'</b></span><span class="rp">'+fm(gPr(x,v))+'</span></button>'}).join(''))+
+ '<div class="gin"><label for="gr-in">'+S('O escribe los gramos')+'</label><div class="gbox"><input id="gr-in" type="number" inputmode="numeric" min="100" max="10000" step="50" value="'+(g||'')+'"><span>g</span></div><p class="gnt" id="gr-n">'+gNote(x,g)+'</p></div>'}
+function gF(g){var s=String(g).replace(/\B(?=(\d{3})+(?!\d))/g,'.');return document.documentElement.lang==='en'?s.replace(/\./g,','):s}
+function gNote(x,g){return gOk(g)?'1 kg = '+gF(1000)+' g · '+fm(x.W)+'\n'+gF(g)+' g = '+fm(gPr(x,g)):S('Escribe entre 100 y 10.000 gramos.')}
+function cp(x){return x.W?(gOk(cur.g)?gPr(x,cur.g):0):x.P[cur.p].pr}
+function sheetHTML(){var x=VAR[cur.id],n=0,h='';if(x.W)h=wBody(x);
+ if(!x.W&&x.P.length>1)h+=stepHTML(++n,S('Elige una opción'),x.P.map(function(o,i){return '<button type="button" class="rop" role="radio" aria-checked="'+String(i===cur.p)+'" data-po="'+i+'"><span class="rd"></span><span class="rl"><b>'+esc(S(o.lb))+'</b></span><span class="rp">'+fm(o.pr)+'</span></button>'}).join(''));
  x.G.forEach(function(g,gi){h+=stepHTML(++n,S(g[0]),g[1].map(function(c,ci){return '<button type="button" class="rop" role="radio" aria-checked="'+String(ci===cur.s[gi])+'" data-pg="'+gi+'" data-pc="'+ci+'"><span class="rd"></span><span class="rl"><b>'+esc(S(c))+'</b></span></button>'}).join(''))});
  return '<div class="sh" role="dialog" aria-modal="true" aria-labelledby="sh-t"><div class="gr"></div><div class="hh"><h2 id="sh-t">'+esc(S(x[0]))+'</h2><button type="button" class="x" data-x="1" aria-label="'+S('Cerrar')+'">&times;</button></div>'+(x[2]?'<p class="dd">'+esc(S(x[2]))+'</p>':'')+h+
- '<div class="ft"><span class="qq"><button type="button" data-q="-1" aria-label="'+S('Quitar uno')+'">&minus;</button><output aria-live="polite">'+cur.q+'</output><button type="button" data-q="1" aria-label="'+S('Agregar uno')+'">+</button></span><button type="button" class="go" data-go="1">'+S('Agregar al pedido')+' · '+fm(x.P[cur.p].pr*cur.q)+'</button></div></div>'}
+ '<div class="ft"><span class="qq"><button type="button" data-q="-1" aria-label="'+S('Quitar uno')+'">&minus;</button><output aria-live="polite">'+cur.q+'</output><button type="button" data-q="1" aria-label="'+S('Agregar uno')+'">+</button></span><button type="button" class="go" data-go="1"'+(x.W&&!gOk(cur.g)?' disabled':'')+'>'+S('Agregar al pedido')+' · '+fm(cp(x)*cur.q)+'</button></div></div>'}
 function drawSheet(fs){Carrito.sheet.draw(fs)}
-function openSheet(id,btn){var x=VAR[id];cur={id:id,p:0,s:x.G.map(function(){return 0}),q:1};Carrito.sheet.open({render:sheetHTML,click:sheetClick,onClose:function(){cur=null},restore:function(b){return b&&document.querySelector('[data-vo="'+b.dataset.vo+'"]')}},btn)}
+function openSheet(id,btn){var x=VAR[id];cur={id:id,p:0,s:x.G.map(function(){return 0}),q:1,g:500};Carrito.sheet.open({render:sheetHTML,click:sheetClick,onClose:function(){cur=null},restore:function(b){return b&&document.querySelector('[data-vo="'+b.dataset.vo+'"]')}},btn)}
 function closeSheet(){Carrito.sheet.close()}
 function sheetClick(b){
+ if(b.dataset.gq){cur.g=+b.dataset.gq;drawSheet('[data-gq="'+b.dataset.gq+'"]');return}
  if(b.dataset.po!==undefined){cur.p=+b.dataset.po;drawSheet('[data-po="'+cur.p+'"]');return}
  if(b.dataset.pg!==undefined){cur.s[+b.dataset.pg]=+b.dataset.pc;drawSheet('[data-pg="'+b.dataset.pg+'"][data-pc="'+b.dataset.pc+'"]');return}
  if(b.dataset.q){cur.q=Math.max(1,Math.min(20,cur.q+Number(b.dataset.q)));drawSheet('[data-q="'+b.dataset.q+'"]');return}
- if(b.dataset.go){var x=VAR[cur.id],o=curO(x);qty[o.k]=Math.min(99,(qty[o.k]||0)+cur.q);var nm=S(x[0])+' ('+S(o.lb)+')';closeSheet();refresh();toast(nm+' '+S('agregado a tu pedido'))}
+ if(b.dataset.go){var x=VAR[cur.id];if(x.W){if(!gOk(cur.g))return;var gk=x[0]+'|'+gLb(cur.g);ITEMS[gk]={n:x[0],lb:gLb(cur.g),pr:gPr(x,cur.g),w:1};qty[gk]=Math.min(99,(qty[gk]||0)+cur.q);var nm0=S(x[0])+' ('+gS(gLb(cur.g))+')';closeSheet();refresh();toast(nm0+' '+S('agregado a tu pedido'));return}var o=curO(x);qty[o.k]=Math.min(99,(qty[o.k]||0)+cur.q);var nm=S(x[0])+' ('+S(o.lb)+')';closeSheet();refresh();toast(nm+' '+S('agregado a tu pedido'))}
 }
+document.addEventListener('input',function(e){var t=e.target;if(!cur||!t||t.id!=='gr-in')return;var x=VAR[cur.id];if(!x||!x.W)return;var v=t.value===''?0:Number(t.value);cur.g=v;var ok=gOk(v),go=document.querySelector('.sh .go');
+ if(go){go.disabled=!ok;go.textContent=S('Agregar al pedido')+' · '+fm(ok?gPr(x,v)*cur.q:0)}
+ Array.prototype.forEach.call(document.querySelectorAll('.sh [data-gq]'),function(b){b.setAttribute('aria-checked',String(+b.dataset.gq===v))});
+ var n=document.getElementById('gr-n');if(n)n.textContent=gNote(x,v)});
 function ready(){var ok=Object.keys(qty).length>0&&$('#f-n').value.trim()&&(mode==='Retiro'||$('#f-a').value.trim());return !!ok&&openNow()}
 function payUI(){var p=$("#pay");if(p)p.hidden=$("#f-p").value!=="SINPE Móvil"}
 function refresh(){payUI();
