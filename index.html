@@ -35,7 +35,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 /* Concepto: pantalla partida. Izquierda Pollos La Bomba (en construcción), derecha Papea. */
-:root{--bg:#171212;--fg:#FFFFFF;--gold:#F3A62C;--gold-ink:#171212;--red:#B81622;--red-ink:#FFFFFF;--left:#171212;--left-fg:#FFFFFF;--bar:#0E0A0A;--bar-fg:#F6EFE6;--display:'Figtree',system-ui,sans-serif;--body:'Figtree',system-ui,sans-serif}
+:root{--bg:#171212;--fg:#FFFFFF;--gold:#F3A62C;--gold-ink:#171212;--red:#B81622;--red-ink:#FFFFFF;--left:#F3A62C;--left-fg:#171212;--bar:#0E0A0A;--bar-fg:#F6EFE6;--display:'Figtree',system-ui,sans-serif;--body:'Figtree',system-ui,sans-serif}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark}}
 :root[data-theme="dark"]{color-scheme:dark}
 *{box-sizing:border-box}
@@ -110,6 +110,25 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 .topbar{display:flex;align-items:center;background:#000}.topbar .sites{flex:1 1 auto;min-width:0}.topbar .lg,.topbar .lang{margin:0 6px 0 0;display:flex;gap:4px}.topbar .lg button,.topbar .lang button{min-width:48px;min-height:44px;padding:0 10px;font-size:15px;font-weight:800;color:#fff;background:transparent;border:2px solid #fff;border-radius:10px;cursor:pointer;font-family:inherit}.topbar .lg button[aria-pressed="true"],.topbar .lang button[aria-pressed="true"]{display:none}
 .hd{position:fixed;left:0;right:0;top:0}.hd.nologo{transform:translateY(-100%);visibility:hidden}
 .nos{max-width:560px;margin:22px auto 0;text-align:center}.nos h2{font-size:18px;margin:0 0 8px;letter-spacing:.06em}.nos p{margin:0 0 10px;font-size:16px}.nos .ref{font-weight:800;font-size:18px;margin-top:14px}.nos .ref s{opacity:.75}
+
+/* Fondo ámbar con letras rojas, como la pintura del edificio. El rojo solo en logo y títulos grandes; el texto chico va en negro. */
+.right{background:var(--gold);color:var(--gold-ink)}
+.right h2,.right .lema{color:var(--red)}
+.right .tag{background:var(--red);color:#fff}
+.right .btn,.left .btn.gold{background:var(--red);color:#fff}
+.right:hover .btn,.right:focus-visible .btn{background:var(--gold-ink);color:#fff}
+.left .lema{color:var(--red)}
+.comun{background:var(--red);color:#fff;display:flex;flex-direction:column;align-items:center;gap:14px;padding:30px 20px;text-align:center}
+.comun .addr{max-width:520px;color:#fff}
+.comun .btn.line{border-color:#fff;color:#fff}.comun .btn.line:hover,.comun .btn.line:focus-visible{background:#fff;color:var(--red)}
+
+/* De la franja roja hacia abajo, todo rojo */
+.comun{padding-bottom:6px}
+.fam{background:var(--red);color:#fff;padding-top:24px}
+.fam #t-fam,.fam h2,.fam .lead,.fam .zona,.nos .ref{color:#fff}
+.fc{border-color:#fff;color:#fff;background:rgba(255,255,255,.08)}
+.fc .go{color:#fff}
+a.fc:hover,a.fc:focus-visible{background:#fff;color:var(--red)}a.fc:hover .go,a.fc:focus-visible .go{color:var(--red)}
 </style>
 <div class="topbar"><nav class="sites" aria-label="Nuestros negocios" data-en-aria="Our businesses"><a href="papea/index.html" data-track="sites-papea">Papea</a><a href="https://www.sodalabomba.com" data-track="sites-soda"><img src="img/favicon-soda-48.png" alt="" width="22" height="22">Soda La Bomba</a></nav><div class="lg" role="group" aria-label="Idioma"><button type="button" id="b-es" aria-pressed="true" aria-label="Español" title="Español">ES</button><button type="button" id="b-en" aria-pressed="false" aria-label="English" title="English">EN</button></div></div>
 <div class="st" id="st" role="status" aria-live="polite" data-e="0"></div>
@@ -121,32 +140,34 @@ h1,h2{font-family:var(--display);font-weight:800;text-transform:uppercase;letter
 </header>
 <main class="split" id="inicio">
 <section class="half left" aria-labelledby="t-pollos">
-<span class="tag" data-en="Family business since 2012">Empresa familiar desde 2012</span>
-<h1 id="t-pollos" class="logo"><img src="img/logo-pollos-amarillo.png" width="700" height="701" alt="Pollos La Bomba"></h1>
-<p class="hrs" data-en="Every day, 10 a.m. to 10 p.m.">Todos los días de 10 a. m. a 10 p. m.</p>
-<p class="addr" data-en="On Route 4, Horquetas de Sarapiquí.&lt;br&gt;Across from the JyJ gas station and Soda La Bomba.">Sobre Ruta 4, Horquetas de Sarapiquí.<br>Frente a la Gasolinera JyJ y Soda La Bomba.</p>
+<h1 id="t-pollos" class="logo"><img src="img/logo-pollos-rojo.png" width="700" height="701" alt="Pollos La Bomba"></h1>
 <div class="btns">
 <a class="btn gold" data-track="entrada-menu" href="pollos/index.html" data-en="See menu and order">Ver menú y pedir</a>
-<a class="btn line" data-track="entrada-como-llegar" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Google Maps</span></a>
-<a class="btn line" data-track="entrada-waze" href="https://waze.com/ul?ll=10.333714181537344,-83.95064152587013&navigate=yes&zoom=17" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Waze</span></a>
-<a class="btn line" id="call" data-track="entrada-llamar" href="tel:+50672777303"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span data-en="Call 7277-7303">Llamar al 7277-7303</span></a>
 </div>
 </section>
 <a class="half right" id="papea" href="papea/index.html" data-track="entrada-papea" aria-labelledby="t-papea">
 <span class="tag" data-en="New">Nuevo</span>
 <h2 id="t-papea">Papea</h2>
 <p class="lema">Pura papa, pura vida.</p>
-<p class="soon" style="max-width:320px" data-en="Fries in a cone or Caja Bomba. See the menu and build your order.">Papas fritas en cono y Caja Bomba. Ve el menú y arma tu pedido.</p>
+<p class="soon" style="max-width:320px" data-en="Fries in a cone and box. See the menu and build your order.">Papas fritas en cono y caja. Ve el menú y arma tu pedido.</p>
 <span class="btn" data-en="See menu and order">Ver menú y pedir</span>
 </a>
 </main>
+<div class="comun">
+<p class="addr" data-en="On Route 4, Horquetas de Sarapiquí.&lt;br&gt;Across from the JyJ gas station and Soda La Bomba.">Sobre Ruta 4, Horquetas de Sarapiquí.<br>Frente a la Gasolinera JyJ y Soda La Bomba.</p>
+<div class="btns">
+<a class="btn line" data-track="entrada-como-llegar" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Google Maps</span></a>
+<a class="btn line" data-track="entrada-waze" href="https://waze.com/ul?ll=10.333714181537344,-83.95064152587013&navigate=yes&zoom=17" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>Waze</span></a>
+<a class="btn line" id="call" data-track="entrada-llamar" href="tel:+50672777303"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span data-en="Call 7277-7303">Llamar al 7277-7303</span></a>
+</div>
+</div>
 <section class="fam" aria-labelledby="t-fam">
 <p class="lead" id="t-fam" data-en="We are a family business with &lt;span data-years&gt;14&lt;/span&gt; years of experience on Route 4, Horquetas de Sarapiquí. Since 2012 we have been serving the flavor you know.">Somos una empresa familiar con <span data-years>14</span> años de experiencia en la Ruta 4, Horquetas de Sarapiquí. Desde 2012 atendemos con el buen sabor de siempre.</p>
-<div class="nos"><h2 data-en="About us">Nosotros</h2><!-- Para revisión de Emil. Sin cifras personales hasta que Dixia las apruebe. --><p data-en="It all began in 2012 with one very small restaurant. With vision and tireless work, its founder kept growing it: from one space to two, then three, until every facility was expanded. Today we serve around the clock and are about to open a new place.">Todo empezó en 2012 con un local muy pequeño. Con visión y trabajo incansable, su fundadora lo fue ampliando: de un local a dos, luego a tres, hasta renovar todas las instalaciones. Hoy atendemos las 24 horas y estamos a punto de abrir un nuevo establecimiento.</p><p class="ref" id="ref" lang="es"></p></div>
+<div class="nos"><p class="ref" id="ref" lang="es"></p></div>
 <div class="fcs">
 <a class="fc" data-track="fam-soda" href="https://www.sodalabomba.com"><b>Soda La Bomba</b><span data-en="The best food. Open 24 hours.">La mejor comida. Abierto 24 horas.</span><span class="go" data-en="Visit →">Visitar →</span></a>
 </div>
-<p class="lead zona" data-en="Express delivery from all our businesses: about 10 km around us. Along the road to Puerto Viejo, as far as La Chaves. Along the road to Río Frío and the junction, as far as Colonia Cubujuquí.">Express a domicilio en todos nuestros negocios: unos 10 km a la redonda. Por la vía hacia Puerto Viejo, hasta La Chaves. Por la vía hacia Río Frío y el cruce, hasta Colonia Cubujuquí.</p>
+<p class="lead zona" data-en="Express delivery from all our businesses. About 10 km around us. Along the road to Puerto Viejo, as far as La Chaves. Along the road to Río Frío and the junction, as far as Colonia Cubujuquí.">Express a domicilio en todos nuestros negocios. Unos 10 km a la redonda. Por la vía hacia Puerto Viejo, hasta La Chaves. Por la vía hacia Río Frío y el cruce, hasta Colonia Cubujuquí.</p>
 </section>
 <footer class="bar"><b>Pollos La Bomba</b><a href="#top" data-up="1" data-en="↑ Back to top">↑ Volver arriba</a></footer>
 
