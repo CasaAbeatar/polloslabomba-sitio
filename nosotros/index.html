@@ -63,13 +63,16 @@ footer{text-align:center;font-weight:800;padding:0 20px 36px}
 <div class="row"><a class="b" href="https://www.google.com/maps/search/?api=1&query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener">Cómo llegar</a></div>
 
 <div id="redes-wrap" hidden><h2>Síguenos</h2><div class="row" id="redes"></div></div>
+<div id="res-wrap" hidden><h2>Tu opinión cuenta</h2><p>Tu reseña en Google ayuda a que más gente nos encuentre en la ruta.</p><div class="row"><a class="b" id="res" href="#" target="_blank" rel="noopener">Déjanos tu reseña en Google</a></div></div>
 </main>
 <footer>Pollos La Bomba · <a href="../privacidad/index.html">Aviso de privacidad</a></footer>
 <script>
 /* Enlaces de redes: se activan al escribir la dirección. Vacío = no se muestra. */
 var REDES=[{t:'Instagram',u:''},{t:'Facebook',u:''}];
+var RESENA=''; /* enlace de reseña en Google; vacío = no se muestra */
 (function(){var h='';REDES.forEach(function(x){if(x.u)h+='<a class="b l" href="'+x.u+'" target="_blank" rel="noopener">'+x.t+'</a>'});
 if(h){document.getElementById('redes').innerHTML=h;document.getElementById('redes-wrap').hidden=false}
+if(RESENA){var r=document.getElementById('res');r.href=RESENA;document.getElementById('res-wrap').hidden=false}
 var d=new Date(),y=d.getFullYear()-2012;if(d<new Date(d.getFullYear(),8,30))y--;
 document.querySelectorAll('[data-years]').forEach(function(e){e.textContent=y})})();
 </script>
