@@ -283,7 +283,7 @@ section.cat[id],.pap{scroll-margin-top:calc(var(--hh,0px) + var(--ch,60px) + 8px
 @media(min-width:900px){.chips{flex-wrap:wrap;overflow:visible;justify-content:center}.chips.more{-webkit-mask-image:none;mask-image:none}}
 @media(max-width:759px){.hero{padding:12px 20px 4px;gap:8px}.logo img{width:150px}.lema{font-size:19px}.tag{font-size:13px}.menu>h2{margin-bottom:4px}.hero .tag{display:none}.disp{margin:-8px auto 8px}.menu>.sub{margin-bottom:10px}}
 .papl{display:inline-flex;align-items:center;min-height:44px;font-weight:800;font-size:17px;color:var(--fg);text-decoration:underline;text-underline-offset:3px}
-.sh .hh h2{min-width:0;overflow-wrap:break-word}</style>
+.sh .hh h2{min-width:0;overflow-wrap:break-word}.cl .cdt{font-weight:400;font-size:14px;line-height:1.35;opacity:.85;margin-top:3px}</style>
 <link rel="preconnect" href="https://casaabeatar.github.io" crossorigin>
 <link rel="stylesheet" href="https://casaabeatar.github.io/carrito-la-bomba/v1/carrito.css">
 </head>
@@ -431,7 +431,7 @@ function S(k){if(L!=='en')return k;if(EN[k])return EN[k];return typeof k==='stri
 var fm=Carrito.fm;
 function pm(v){return v==null?'':fm(v)}
 var VAR=[];
-var ITEMS={};
+var ITEMS={},CD={};
 MENU.forEach(function(c){c.n=0;c.g.forEach(function(g){g.i.forEach(function(x){
  c.n++;
  x.P=(x[1]||[]).map(function(p){
@@ -443,6 +443,8 @@ MENU.forEach(function(c){c.n=0;c.g.forEach(function(g){g.i.forEach(function(x){
  });
  if(x.P.length>1)x.P.forEach(function(o){if(!o.lb)o.lb='solo'});
  x.G=x[3]||[];
+ (function(){var dsc=x[2]||'',ss=dsc.split('. ').map(function(t,i,a){return i<a.length-1?t+'.':t}),nt=/^(Te escribimos|Sujeto|Sujetos|Si eliges otra|Se vende por kilo|Elige la cantidad|En Express|Solo en el local|Arma tu desayuno)/,nz=function(t){return String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')},ch=[];x.G.forEach(function(g){g[1].forEach(function(c){ch.push(nz(c))})});x.P.forEach(function(p){if(p.lb&&p.lb!=='solo')ch.push(nz(p.lb))});
+  for(var i=0;i<ss.length;i++){if(nt.test(ss[i]))continue;var n=0,z=nz(ss[i]);ch.forEach(function(c){if(c.length>2&&z.indexOf(c)>=0)n++});if(n>=2)break;CD[x[0]]=ss[i];var en=EN[dsc];if(en){var es=en.split('. ').map(function(t,j,a){return j<a.length-1?t+'.':t});if(es.length===ss.length&&!EN[ss[i]])EN[ss[i]]=es[i]}break}})();
  if(!x.G.length)x.o=x.P;
  else{x.o=[];x.P.forEach(function(p,pi){
   var rec=function(gi,sel){
@@ -538,7 +540,7 @@ function renderSum(){
  var ks=Object.keys(qty),h='';
  if(!ks.length){$('#sumry').innerHTML='<p class="emp">'+S('Aún no has agregado nada. Elige del menú de arriba.')+'</p>';return}
  ks.forEach(function(k){var it=ITEMS[k],q=qty[k];
-  h+='<div class="cl"><div class="tt">'+esc(S(it.n))+(it.lb?' <span class="lb">('+esc(S(it.lb))+')</span>':'')+'</div><div class="tt">'+(it.pr==null?S('Por confirmar'):fm(it.pr*q))+'</div><span class="ctl" data-k="'+esc(k)+'"><button type="button" data-d="-1" aria-label="'+S('Quitar uno')+'">−</button><span class="n">'+q+'</span><button type="button" data-d="1" aria-label="'+S('Agregar uno')+'">+</button></span><button type="button" class="rm" data-rm="'+esc(k)+'">'+S('Quitar')+'</button></div>';
+  h+='<div class="cl"><div class="tt">'+esc(S(it.n))+(it.lb?' <span class="lb">('+esc(S(it.lb))+')</span>':'')+(CD[it.n]?'<div class="cdt">'+esc(S(CD[it.n]))+'</div>':'')+'</div><div class="tt">'+(it.pr==null?S('Por confirmar'):fm(it.pr*q))+'</div><span class="ctl" data-k="'+esc(k)+'"><button type="button" data-d="-1" aria-label="'+S('Quitar uno')+'">−</button><span class="n">'+q+'</span><button type="button" data-d="1" aria-label="'+S('Agregar uno')+'">+</button></span><button type="button" class="rm" data-rm="'+esc(k)+'">'+S('Quitar')+'</button></div>';
  });
  var T=total();
  h+=(T.t?'<div class="tot"><span>'+S(T.u?'Total de productos con precio':'Total productos')+'</span><span>'+fm(T.t)+'</span></div>':'')+(T.u?'<p class="foot" style="text-align:left;margin:0 0 8px">'+S('Los productos “Por confirmar” los cotizamos por WhatsApp.')+'</p>':'')+'<p class="foot" style="text-align:left;margin:0 0 8px">'+S('Todos los productos están sujetos a disponibilidad.')+'</p>'+(mode==='Express'?'<p class="foot" style="text-align:left;margin:0 0 8px">'+S('No incluye envío (desde ₡3.000). Te confirmamos el costo por WhatsApp.')+'</p>':'')+'<button type="button" class="btn line" data-clear="1" style="cursor:pointer">'+S('Borrar pedido')+'</button>';
