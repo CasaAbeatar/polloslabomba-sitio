@@ -577,13 +577,14 @@ function sheetHTML(){var x=VAR[cur.id],n=0,h='';
  x.G.forEach(function(g,gi){h+=stepHTML(++n,S(g[0]),g[1].map(function(c,ci){return '<button type="button" class="rop" role="radio" aria-checked="'+String(ci===cur.s[gi])+'" data-pg="'+gi+'" data-pc="'+ci+'"><span class="rd"></span><span class="rl"><b>'+esc(S(c))+'</b>'+(g[2]&&g[2][ci]?'<small>'+esc(S(g[2][ci]))+'</small>':'')+'</span></button>'}).join(''))});if(x.W)h+=wBody(x);
  return '<div class="sh" role="dialog" aria-modal="true" aria-labelledby="sh-t"><div class="gr"></div><div class="hh"><h2 id="sh-t">'+esc(S(x[0]))+'</h2><button type="button" class="x" data-x="1" aria-label="'+S('Cerrar')+'">&times;</button></div>'+(x[2]?'<p class="dd">'+esc(S(x[2]))+'</p>':'')+h+
  '<div class="ft"><span class="qq"><button type="button" data-q="-1" aria-label="'+S('Quitar uno')+'">&minus;</button><output aria-live="polite">'+cur.q+'</output><button type="button" data-q="1" aria-label="'+S('Agregar uno')+'">+</button></span><button type="button" class="go" data-go="1"'+(isReady(x)?'':' disabled')+'>'+(isReady(x)?S('Agregar al pedido')+(cp(x)==null?'':' · '+fm(cp(x)*cur.q)):S('Elige una opción'))+'</button></div></div>'}
-function drawSheet(fs){Carrito.sheet.draw(fs)}
+function drawSheet(fs){var o=document.querySelector('.sh'),st=o?o.scrollTop:0;Carrito.sheet.draw(fs);var n=document.querySelector('.sh');if(n)n.scrollTop=st}
 function openSheet(id,btn){var x=VAR[id];cur={id:id,p:(x.W||x.P.length<2)?0:-1,s:x.G.map(function(g){return g[1].length<2?0:-1}),q:1,g:0};Carrito.sheet.open({render:sheetHTML,click:sheetClick,onClose:function(){cur=null},restore:function(b){return b&&document.querySelector('[data-vo="'+b.dataset.vo+'"]')}},btn)}
 function closeSheet(){Carrito.sheet.close()}
+function nextStep(){setTimeout(function(){var sh=document.querySelector('.sh');if(!sh)return;var g=[].slice.call(sh.querySelectorAll('[role=radiogroup]')).filter(function(g){return !g.querySelector('[aria-checked=true]')})[0];if(g){var t=g.previousElementSibling||g;t.scrollIntoView({behavior:'smooth',block:'start'})}},80)}
 function sheetClick(b){
  if(b.dataset.gq){cur.g=+b.dataset.gq;drawSheet('[data-gq="'+b.dataset.gq+'"]');return}
- if(b.dataset.po!==undefined){cur.p=+b.dataset.po;drawSheet('[data-po="'+cur.p+'"]');return}
- if(b.dataset.pg!==undefined){cur.s[+b.dataset.pg]=+b.dataset.pc;drawSheet('[data-pg="'+b.dataset.pg+'"][data-pc="'+b.dataset.pc+'"]');return}
+ if(b.dataset.po!==undefined){cur.p=+b.dataset.po;drawSheet('[data-po="'+cur.p+'"]');nextStep();return}
+ if(b.dataset.pg!==undefined){cur.s[+b.dataset.pg]=+b.dataset.pc;drawSheet('[data-pg="'+b.dataset.pg+'"][data-pc="'+b.dataset.pc+'"]');nextStep();return}
  if(b.dataset.q){cur.q=Math.max(1,Math.min(20,cur.q+Number(b.dataset.q)));drawSheet('[data-q="'+b.dataset.q+'"]');return}
  if(b.dataset.go){var x=VAR[cur.id];if(!isReady(x))return;if(x.W){var wl=(x.G.length?x.G.map(function(g,j){return g[1][cur.s[j]]}).join(', ')+', ':'')+gLb(cur.g);var gk=x[0]+'|'+wl;ITEMS[gk]={n:x[0],lb:wl,pr:gPr(x,cur.g),w:1};qty[gk]=Math.min(99,(qty[gk]||0)+cur.q);var nm0=S(x[0])+' ('+gS(wl)+')';closeSheet();refresh();toast(nm0+' '+S('agregado a tu pedido'));return}var o=curO(x);qty[o.k]=Math.min(99,(qty[o.k]||0)+cur.q);var nm=S(x[0])+' ('+S(o.lb)+')';closeSheet();refresh();toast(nm+' '+S('agregado a tu pedido'))}
 }
