@@ -32,10 +32,23 @@
 .pg .n{position:absolute;left:8.5cqw;bottom:9.2cqw;margin:0;font-weight:800;font-size:4.1cqw;line-height:1.16;color:#171212;text-transform:uppercase}
 .pg .n small{display:block;font-size:2.1cqw;line-height:1.3;text-transform:none;font-weight:700;margin-top:1.2cqw}
 .pg .r{position:absolute;right:8.5cqw;bottom:9.8cqw;margin:0;font-weight:700;font-size:2.1cqw;color:#171212;text-align:right}
+.pg .t span{display:block;animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.pg .t span:nth-child(2){animation-delay:.2s}.pg .t span:nth-child(3){animation-delay:.4s}
+.pg .t b{display:inline-block;transform-origin:0 70%;animation:heat 2.6s ease-in-out 1.4s infinite alternate}
+.pg .s{animation:up .9s cubic-bezier(.2,.7,.2,1) .75s both}
+.pg .n,.pg .r{animation:fade 1.2s ease 1.2s both}
+.pg .cook{position:absolute;left:8.5cqw;top:80.5cqw;width:83cqw;height:1.4cqw;border-radius:1cqw;background:rgba(23,18,18,.16);overflow:hidden;animation:fade 1s ease 1s both}
+.pg .cook i{display:block;height:100%;width:8%;border-radius:1cqw;background:repeating-linear-gradient(135deg,#B81622 0 1.1cqw,#8f1019 1.1cqw 2.2cqw);background-size:3.1cqw 3.1cqw;animation:cook 9s ease-in-out 1.2s infinite alternate,pole .9s linear infinite}
+@keyframes up{from{opacity:0;transform:translateY(4cqw)}}
+@keyframes fade{from{opacity:0}}
+@keyframes heat{from{transform:scale(1)}to{transform:scale(1.035)}}
+@keyframes cook{from{width:8%}to{width:100%}}
+@keyframes pole{to{background-position:3.1cqw 0}}
+@media(prefers-reduced-motion:reduce){.pg *{animation:none!important}.pg .cook i{width:55%}}
 </style>
 </head>
 <body>
-<div class="pg"><h1 class="t">Algo se está<br><b>cocinando</b> en<br>la Ruta 4.</h1><p class="s">Pronto sabrás qué.</p><p class="n">Pollos<br>La Bomba<small>Empresa familiar con<br><span data-years>14</span> años de experiencia</small></p><p class="r">Ruta 4, Horquetas de Sarapiquí</p></div>
+<div class="pg"><h1 class="t"><span>Algo se está</span><span><b>cocinando</b> en</span><span>la Ruta 4.</span></h1><p class="s">Pronto sabrás qué.</p><p class="n">Pollos<br>La Bomba<small>Empresa familiar con<br><span data-years>14</span> años de experiencia</small></p><p class="r">Ruta 4, Horquetas de Sarapiquí</p><div class="cook" role="presentation"><i></i></div></div>
 <script>(function(){var d=new Date(),y=d.getFullYear()-2012;if(d<new Date(d.getFullYear(),8,30))y--;document.querySelectorAll("[data-years]").forEach(function(e){e.textContent=y})})()</script>
 <script data-goatcounter="https://polloslabomba.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
