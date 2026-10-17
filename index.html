@@ -662,8 +662,8 @@ function status(){
   var bn=$('#ban');bn.hidden=o;
   if(!o)bn.textContent=S(pre?'Pollos La Bomba abre el sábado 14 de noviembre a las 10 a. m. Todavía no recibimos pedidos.':'Estamos cerrados ahora. Atendemos todos los días de 10 a. m. a 10 p. m., para llevar y Express.');
   var hm=d.getUTCHours()*60+d.getUTCMinutes(),oo=hm>=600&&hm<1320;
-  if(oo)t=['1',en?'Restaurant open until 10 p. m.':'Local abierto hasta las 10 p. m.',en?'Express until 10 p. m.':'Express hasta las 10 p. m.'];
-  else t=['0',en?'Restaurant closed, opens at 10 a. m.':'Local cerrado, abre a las 10 a. m.',en?'Express starts at 10 a. m.':'Express inicia a las 10 a. m.'];
+  if(oo)t=['1',en?'Restaurant until 10 p.m.':'Local hasta 10 p. m.',en?'Express until 10 p.m.':'Express hasta 10 p. m.'];
+  else t=['0',en?'Restaurant opens 10 a.m.':'Local abre 10 a. m.',en?'Express starts 10 a.m.':'Express inicia 10 a. m.'];
   el.dataset.e=t[0];el.innerHTML='<span><span class="dot"></span>'+t[1]+'</span><span class="e"><span class="dot"></span>'+t[2]+'</span><button type="button" class="zlk" data-zona="1">'+ZSVG+'<span>'+S('Zona de entrega')+'</span></button>';
 }
 Array.prototype.forEach.call(document.getElementsByName('mo'),function(r){r.addEventListener('change',function(){if(r.checked){setMode(r.value);refresh()}})});
@@ -810,5 +810,5 @@ p.addEventListener('click',function(e){if(e.target.closest('a'))st(false)});
 </script><style id="nbus2">.nb,.topbar .lg button{border-radius:999px!important}.nb{padding:0 14px}.npop img{border:1px solid #E6DDD3;background:#fff}
 .zb{display:none;align-items:center;gap:6px;min-height:44px;padding:0 14px;border:1.5px solid #fff;border-radius:999px;background:rgba(255,255,255,.14);color:#fff;font:800 13px/1 var(--body,system-ui);cursor:pointer;white-space:nowrap}.zb:focus-visible{outline:3px solid #F3A62C;outline-offset:2px}
 .hsb{border-radius:999px}
-@media (min-width:360px){.zb{display:inline-flex}.st .zlk{display:none!important}}@media (max-width:399px){.nb>svg:first-child,.zb svg{display:none}.nb{padding:0 12px;gap:6px}.zb{padding:0 12px}}</style></body>
+@media (min-width:360px){.zb{display:inline-flex}.st .zlk{display:none!important}}@media (max-width:399px){.nb>svg:first-child,.zb svg{display:none}.nb{padding:0 12px;gap:6px}.zb{padding:0 12px}}.st>span{white-space:nowrap}@media (min-width:360px){.st{flex-wrap:nowrap;gap:2px 14px}}</style></body>
 </html>
