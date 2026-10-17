@@ -663,7 +663,7 @@ function status(){
   if(!o)bn.textContent=S(pre?'Pollos La Bomba abre el sábado 14 de noviembre a las 10 a. m. Todavía no recibimos pedidos.':'Estamos cerrados ahora. Atendemos todos los días de 10 a. m. a 10 p. m., para llevar y Express.');
   if(pre)t=['2',en?'Restaurant: 10 a. m. to 10 p. m.':'Local: 10 a. m. a 10 p. m.',en?'Express: 10 a. m. to 10 p. m.':'Express: 10 a. m. a 10 p. m.'];
   else if(o)t=['1',en?'Restaurant open until 10 p. m.':'Local abierto hasta las 10 p. m.',en?'Express until 10 p. m.':'Express hasta las 10 p. m.'];
-  else t=['0',en?'Restaurant closed, opens at 10 a. m.':'Local cerrado, abre a las 10 a. m.',en?'Express opens at 10 a. m.':'Express abre a las 10 a. m.'];
+  else t=['0',en?'Restaurant closed, opens at 10 a. m.':'Local cerrado, abre a las 10 a. m.',en?'Express starts at 10 a. m.':'Express inicia a las 10 a. m.'];
   el.dataset.e=t[0];el.innerHTML='<span><span class="dot"></span>'+t[1]+'</span><span class="e"><span class="dot"></span>'+t[2]+'</span><button type="button" class="zlk" data-zona="1">'+ZSVG+'<span>'+S('Zona de entrega')+'</span></button>';
 }
 Array.prototype.forEach.call(document.getElementsByName('mo'),function(r){r.addEventListener('change',function(){if(r.checked){setMode(r.value);refresh()}})});
