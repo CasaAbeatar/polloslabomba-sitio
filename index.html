@@ -336,7 +336,6 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <header class="hd nologo" id="top">
 <div class="hd1">
 <a class="hlogo" href="#top" data-up="1" aria-label="Pollos La Bomba, volver al inicio" data-en-aria="Pollos La Bomba, back to the top"><img src="img/logo-pollos-amarillo.png" width="700" height="701" alt=""></a>
-<span class="hname" aria-hidden="true">Pollos La Bomba</span>
 
 </div>
 </header>
@@ -397,7 +396,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 
 <section class="fam" aria-labelledby="t-fam">
-<p class="lead" id="t-fam" data-en="We are a family business with &lt;span data-years&gt;14&lt;/span&gt; years of experience on Route 4, Horquetas de Sarapiquí. Since 2012 we have served with the good taste you know.">Somos una empresa familiar con <span data-years>14</span> años de experiencia en la Ruta 4 Horquetas de Sarapiquí. Desde 2012 atendemos con el buen sabor de siempre.</p>
+<p class="lead" id="t-fam" data-en="We are a family business with &lt;span data-years&gt;14&lt;/span&gt; years of experience on Route 4, Horquetas de Sarapiquí.">Somos una empresa familiar con <span data-years>14</span> años de experiencia en la Ruta 4 Horquetas de Sarapiquí.</p>
 <div class="nos"><p class="ref" id="ref" lang="es"></p></div>
 </section>
 <p class="foot" data-en="Prices include VAT.">Precios con IVA incluido.</p>
@@ -659,9 +658,9 @@ function status(){
   var bn=$('#ban');bn.hidden=o;
   if(!o)bn.textContent=S(pre?'Pollos La Bomba abre el sábado 14 de noviembre a las 10 a. m. Todavía no recibimos pedidos.':'Estamos cerrados ahora. Atendemos todos los días de 10 a. m. a 10 p. m., para llevar y Express.');
   var hm=d.getUTCHours()*60+d.getUTCMinutes(),oo=hm>=600&&hm<1320;
-  if(oo)t=['1',en?'Restaurant until 10 p.m.':'Local hasta 10 p. m.',en?'Express until 10 p.m.':'Express hasta 10 p. m.'];
-  else t=['0',en?'Restaurant opens 10 a.m.':'Local abre 10 a. m.',en?'Express starts 10 a.m.':'Express inicia 10 a. m.'];
-  el.dataset.e=t[0];el.innerHTML='<span><span class="dot"></span>'+t[1]+'</span><span class="e"><span class="dot"></span>'+t[2]+'</span><button type="button" class="zlk" data-zona="1">'+ZSVG+'<span>'+S('Zona de entrega')+'</span></button>';
+  if(oo)t=['1',en?'Restaurant and Express until 10 p.m.':'Local y Express hasta 10 p. m.'];
+  else t=['0',en?'Restaurant and Express open 10 a.m.':'Local y Express abren 10 a. m.'];
+  el.dataset.e=t[0];el.innerHTML='<span><span class="dot"></span>'+t[1]+'</span><button type="button" class="zlk" data-zona="1">'+ZSVG+'<span>'+S('Zona de entrega')+'</span></button>';
 }
 Array.prototype.forEach.call(document.getElementsByName('mo'),function(r){r.addEventListener('change',function(){if(r.checked){setMode(r.value);refresh()}})});
 function hh(){document.documentElement.style.setProperty('--hh',$('#top').offsetHeight+'px')}
