@@ -44,28 +44,19 @@
 @keyframes heat{from{transform:scale(1)}to{transform:scale(1.035)}}
 @keyframes cook{from{width:8%}to{width:100%}}
 @keyframes pole{to{background-position:3.1cqw 0}}
-@media(prefers-reduced-motion:reduce){.pg *{animation:none!important}.pg .cook i{width:55%}.pg .steam,.pg .embers{display:none}.pg .t b{-webkit-text-fill-color:#171212;color:#171212;background:none}}
+@media(prefers-reduced-motion:reduce){.pg *{animation:none!important}.pg .cook i{width:55%}.pg .steam{display:none}.pg .t b{-webkit-text-fill-color:#171212;color:#171212;background:none}}
 .pg .steam{position:absolute;left:0;top:26cqw;width:100%;height:56cqw;z-index:0;pointer-events:none}
 .pg .steam i{position:absolute;bottom:0;width:34cqw;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.7),rgba(255,247,225,.3) 45%,rgba(255,255,255,0) 72%);filter:blur(2.2cqw);opacity:0;animation:puff 5s ease-out infinite}
 .pg .steam i:nth-child(1){left:2cqw;animation-delay:.8s}.pg .steam i:nth-child(2){left:22cqw;animation-delay:1.6s}.pg .steam i:nth-child(3){left:44cqw;animation-delay:2.4s}.pg .steam i:nth-child(4){left:62cqw;animation-delay:3.2s}.pg .steam i:nth-child(5){left:12cqw;animation-delay:4s}.pg .steam i:nth-child(6){left:34cqw;animation-delay:4.7s}.pg .steam i:nth-child(7){left:54cqw;animation-delay:5.4s}
 @keyframes puff{0%{opacity:0;transform:translate(0,0) scale(.5)}25%{opacity:1}60%{opacity:.8;transform:translate(5cqw,-26cqw) scale(1.25)}100%{opacity:0;transform:translate(-4cqw,-56cqw) scale(1.9)}}
-.pg .embers{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 .pg .t,.pg .s,.pg .n,.pg .r,.pg .cook{z-index:1}
 .pg .t b{background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.95) 50%,transparent 58%) 160% 0/260% 100% no-repeat,linear-gradient(#171212,#171212);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:heat 2.6s ease-in-out 1.4s infinite alternate,shine 6s ease-in-out 2s infinite}
 @keyframes shine{0%,55%{background-position:160% 0,0 0}85%,100%{background-position:-60% 0,0 0}}
 </style>
 </head>
 <body>
-<div class="pg"><canvas class="embers" aria-hidden="true"></canvas><div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><h1 class="t"><span>Algo se está</span><span><b>cocinando</b> en</span><span>la Ruta 4.</span></h1><p class="s">Pronto sabrás qué.</p><p class="n">Pollos<br>La Bomba<small>Empresa familiar con<br><span data-years>14</span> años de experiencia</small></p><p class="r">Ruta 4, Horquetas de Sarapiquí</p><div class="cook" role="presentation"><i></i></div></div>
+<div class="pg"><div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><h1 class="t"><span>Algo se está</span><span><b>cocinando</b> en</span><span>la Ruta 4.</span></h1><p class="s">Pronto sabrás qué.</p><p class="n">Pollos<br>La Bomba<small>Empresa familiar con<br><span data-years>14</span> años de experiencia</small></p><p class="r">Ruta 4, Horquetas de Sarapiquí</p><div class="cook" role="presentation"><i></i></div></div>
 <script>(function(){var d=new Date(),y=d.getFullYear()-2012;if(d<new Date(d.getFullYear(),8,30))y--;document.querySelectorAll("[data-years]").forEach(function(e){e.textContent=y})})()</script>
-<script>(function(){var c=document.querySelector('.embers');if(!c||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-var x=c.getContext('2d'),W,H,D=Math.min(devicePixelRatio||1,2),P=[],g=c.parentNode,cols=['#B81622','#D8471B','#FFF3D6','#B81622'];
-function rs(){W=g.clientWidth;H=g.clientHeight;c.width=W*D;c.height=H*D;x.setTransform(D,0,0,D,0,0)}
-function mk(i){return{x:Math.random()*W,y:i?Math.random()*H:H+8,r:(.25+Math.random()*.6)*W/200,v:(.12+Math.random()*.4)*W/400,s:Math.random()*6.28,a:.35+Math.random()*.5,c:cols[Math.random()*4|0]}}
-rs();for(var i=0;i<46;i++)P.push(mk(1));addEventListener('resize',rs);
-function f(){x.clearRect(0,0,W,H);for(var i=0;i<P.length;i++){var p=P[i];p.y-=p.v;p.s+=.012;p.x+=Math.sin(p.s)*.25;if(p.y<-8)P[i]=mk(0);
-var t=Math.min(1,p.y/(H*.25),(H-p.y)/30);x.globalAlpha=Math.max(0,p.a*t);x.shadowBlur=W/60;x.shadowColor=p.c;x.fillStyle=p.c;x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill()}requestAnimationFrame(f)}
-f()})();</script>
 <script data-goatcounter="https://polloslabomba.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
