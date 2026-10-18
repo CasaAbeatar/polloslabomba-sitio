@@ -295,7 +295,7 @@ section.cat[id],.pap{scroll-margin-top:calc(var(--hh,0px) + var(--ch,60px) + 8px
 .nov .fine{margin:0;font-size:12px;line-height:1.4}
 .nov.hecho .row,.nov.hecho label,.nov.hecho .fine{display:none}.nov.hecho .msg{font-size:20px}
 .novs{background:#F3A62C}.nov{color:#171212}.nov label{color:#B81622}.nov input[type=tel]{border:2px solid #171212;color:#171212;background:#FFF6E0}.nov button{background:#B81622;color:#fff}.nov .fine a{color:#171212}.nov .msg.err{color:#8f1019}.nov.hecho .msg{color:#B81622}
-</style>
+.info .novs{padding:20px 0 0;background:none}</style>
 <link rel="preconnect" href="https://casaabeatar.github.io" crossorigin>
 <link rel="stylesheet" href="https://casaabeatar.github.io/carrito-la-bomba/v1/carrito.css">
 <style id="hib">
@@ -396,11 +396,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </section>
 
 <section class="info" id="info" aria-label="Datos de Pollos La Bomba">
-<div><h2 data-en="Contact">Contacto</h2><p><a href="tel:+50672777303">7277-7303</a></p><div class="ib"><a class="btn wa" href="https://wa.me/50672777303" target="_blank" rel="noopener" data-track="info-wa"><span data-en="Questions on WhatsApp">Consultas por WhatsApp</span></a></div></div>
-<div><h2 data-en="Hours">Horarios</h2><p data-en="&lt;b&gt;In-store pickup and Express:&lt;/b&gt;&lt;br&gt;every day from 10 a.m. to 10 p.m."><b>Retiro en el local y Express:</b><br>todos los días de 10 a. m. a 10 p. m.</p></div>
-<div><h2 data-en="Where we are">Dónde estamos</h2><p data-en="On Route 4 in Horquetas de Sarapiquí.&lt;br&gt;Across from the JyJ gas station and Soda La Bomba.">Sobre la Ruta 4 en Horquetas de Sarapiquí.<br>Frente a la Gasolinera JyJ y Soda La Bomba.</p><div class="ib"><a class="btn gold" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener" data-track="info-maps"><span>Google Maps</span></a><a class="btn line" href="https://waze.com/ul?ll=10.333714181537344,-83.95064152587013&amp;navigate=yes&amp;zoom=17" target="_blank" rel="noopener" data-track="info-waze"><span>Waze</span></a></div></div>
-</section>
-<section class="novs" aria-labelledby="t-nov">
+<div><h2 data-en="Contact">Contacto</h2><p><a href="tel:+50672777303">7277-7303</a></p><div class="ib"><a class="btn wa" href="https://wa.me/50672777303" target="_blank" rel="noopener" data-track="info-wa"><span data-en="Questions on WhatsApp">Consultas por WhatsApp</span></a></div><div class="novs" aria-labelledby="t-nov">
 <form class="nov" id="nov" novalidate>
 <label id="t-nov" for="tel" data-en="Get offers and news by WhatsApp">Recibe ofertas y novedades por WhatsApp</label>
 <div class="row"><input id="tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="8888 8888" maxlength="17" aria-describedby="fine"><button type="submit" data-en="Keep me posted">Quiero enterarme</button></div>
@@ -408,6 +404,10 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <p class="msg" role="status" aria-live="polite"></p>
 <p class="fine" id="fine" data-en="By sending you accept the &lt;a href=&quot;privacidad/index.html&quot;&gt;Privacy policy&lt;/a&gt;">Al enviar aceptas la <a href="privacidad/index.html">Política de privacidad</a></p>
 </form>
+</div>
+</div>
+<div><h2 data-en="Hours">Horarios</h2><p data-en="&lt;b&gt;In-store pickup and Express:&lt;/b&gt;&lt;br&gt;every day from 10 a.m. to 10 p.m."><b>Retiro en el local y Express:</b><br>todos los días de 10 a. m. a 10 p. m.</p></div>
+<div><h2 data-en="Where we are">Dónde estamos</h2><p data-en="On Route 4 in Horquetas de Sarapiquí.&lt;br&gt;Across from the JyJ gas station and Soda La Bomba.">Sobre la Ruta 4 en Horquetas de Sarapiquí.<br>Frente a la Gasolinera JyJ y Soda La Bomba.</p><div class="ib"><a class="btn gold" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener" data-track="info-maps"><span>Google Maps</span></a><a class="btn line" href="https://waze.com/ul?ll=10.333714181537344,-83.95064152587013&amp;navigate=yes&amp;zoom=17" target="_blank" rel="noopener" data-track="info-waze"><span>Waze</span></a></div></div>
 </section>
 <nav class="bbar" id="bbar" aria-label="Acciones rápidas"><a class="p" href="#menu" data-en="Menu &amp; order">Menú y pedir</a><a href="#info" data-track="bbar-info" data-en="Info">Información</a></nav>
 <div class="shw" id="shw" hidden></div>
