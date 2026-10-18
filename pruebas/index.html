@@ -283,7 +283,19 @@ section.cat[id],.pap{scroll-margin-top:calc(var(--hh,0px) + var(--ch,60px) + 8px
 @media(min-width:900px){.chips{flex-wrap:wrap;overflow:visible;justify-content:center}.chips.more{-webkit-mask-image:none;mask-image:none}}
 @media(max-width:759px){.hero{padding:12px 20px 4px;gap:8px}.logo img{width:150px}.lema{font-size:19px}.tag{font-size:13px}.menu>h2{margin-bottom:4px}.hero .tag{display:none}.disp{margin:-8px auto 8px}.menu>.sub{margin-bottom:10px}}
 .papl{display:inline-flex;align-items:center;min-height:44px;font-weight:800;font-size:17px;color:var(--fg);text-decoration:underline;text-underline-offset:3px}
-.sh .hh h2{min-width:0;overflow-wrap:break-word}.cl .cdt{font-weight:400;font-size:14px;line-height:1.35;opacity:.85;margin-top:3px}</style>
+.sh .hh h2{min-width:0;overflow-wrap:break-word}.cl .cdt{font-weight:400;font-size:14px;line-height:1.35;opacity:.85;margin-top:3px}.novs{padding:36px 20px;text-align:center}
+.nov{width:min(300px,88vw);display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;margin:0 auto}
+.nov label{font-weight:800;font-size:15px}
+.nov .row{display:flex;gap:6px;align-items:stretch;width:100%;justify-content:center}
+.nov input[type=tel]{flex:1 1 0;min-width:0;width:0;min-height:42px;border-radius:10px;padding:0 10px;font:700 16px var(--body);text-align:center}
+.nov button{flex:none;min-height:42px;padding:0 14px;border:0;border-radius:10px;font:800 14px var(--body);cursor:pointer;white-space:nowrap}
+.nov button:disabled{opacity:.6;cursor:default}
+.nov .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.nov .msg{margin:0;font-weight:700;font-size:14px}.nov .msg:empty{display:none}
+.nov .fine{margin:0;font-size:12px;line-height:1.4}
+.nov.hecho .row,.nov.hecho label,.nov.hecho .fine{display:none}.nov.hecho .msg{font-size:20px}
+.novs{background:#F3A62C}.nov{color:#171212}.nov label{color:#B81622}.nov input[type=tel]{border:2px solid #171212;color:#171212;background:#FFF6E0}.nov button{background:#B81622;color:#fff}.nov .fine a{color:#171212}.nov .msg.err{color:#8f1019}.nov.hecho .msg{color:#B81622}
+.info .novs{padding:20px 0 0;background:none}</style>
 <link rel="preconnect" href="https://casaabeatar.github.io" crossorigin>
 <link rel="stylesheet" href="https://casaabeatar.github.io/carrito-la-bomba/v1/carrito.css">
 <style id="hib">
@@ -384,7 +396,16 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </section>
 
 <section class="info" id="info" aria-label="Datos de Pollos La Bomba">
-<div><h2 data-en="Contact">Contacto</h2><p><a href="tel:+50672777303">7277-7303</a></p><div class="ib"><a class="btn wa" href="https://wa.me/50672777303" target="_blank" rel="noopener" data-track="info-wa"><span data-en="Questions on WhatsApp">Consultas por WhatsApp</span></a></div></div>
+<div><h2 data-en="Contact">Contacto</h2><p><a href="tel:+50672777303">7277-7303</a></p><div class="ib"><a class="btn wa" href="https://wa.me/50672777303" target="_blank" rel="noopener" data-track="info-wa"><span data-en="Questions on WhatsApp">Consultas por WhatsApp</span></a></div><div class="novs" aria-labelledby="t-nov">
+<form class="nov" id="nov" novalidate>
+<label id="t-nov" for="tel" data-en="Get offers and news by WhatsApp">Recibe ofertas y novedades por WhatsApp</label>
+<div class="row"><input id="tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="8888 8888" maxlength="17" aria-describedby="fine"><button type="submit" data-en="Keep me posted">Quiero enterarme</button></div>
+<input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+<p class="msg" role="status" aria-live="polite"></p>
+<p class="fine" id="fine" data-en="By sending you accept the &lt;a href=&quot;privacidad/index.html&quot;&gt;Privacy policy&lt;/a&gt;">Al enviar aceptas la <a href="privacidad/index.html">Política de privacidad</a></p>
+</form>
+</div>
+</div>
 <div><h2 data-en="Hours">Horarios</h2><p data-en="&lt;b&gt;In-store pickup and Express:&lt;/b&gt;&lt;br&gt;every day from 10 a.m. to 10 p.m."><b>Retiro en el local y Express:</b><br>todos los días de 10 a. m. a 10 p. m.</p></div>
 <div><h2 data-en="Where we are">Dónde estamos</h2><p data-en="On Route 4 in Horquetas de Sarapiquí.&lt;br&gt;Across from the JyJ gas station and Soda La Bomba.">Sobre la Ruta 4 en Horquetas de Sarapiquí.<br>Frente a la Gasolinera JyJ y Soda La Bomba.</p><div class="ib"><a class="btn gold" href="https://www.google.com/maps/search/?api=1&amp;query=10.333714181537344,-83.95064152587013" target="_blank" rel="noopener" data-track="info-maps"><span>Google Maps</span></a><a class="btn line" href="https://waze.com/ul?ll=10.333714181537344,-83.95064152587013&amp;navigate=yes&amp;zoom=17" target="_blank" rel="noopener" data-track="info-waze"><span>Waze</span></a></div></div>
 </section>
@@ -818,5 +839,18 @@ h2,h2.pt{color:#9A5200!important}
 section.fam{background:#F3A62C!important}section.fam,section.fam *{color:#171212!important}
 .pl,.rp{color:#9A5200!important}
 :focus-visible{outline-color:#C77F0A!important}input[type=radio],input[type=checkbox]{accent-color:#C77F0A}
-</style></body>
+</style><script>
+(function(){var f=document.getElementById('nov');if(!f)return;function en(){return document.documentElement.lang==='en'}var t0=Date.now(),tel=f.querySelector('[name=tel]'),hp=f.querySelector('[name=web]'),b=f.querySelector('button'),m=f.querySelector('.msg');
+tel.addEventListener('input',function(){var d=tel.value.replace(/\D/g,'');if(d.length>11)d=d.slice(0,11);if(d.length===11&&d.indexOf('506')===0)d=d.slice(3);tel.value=d.length>4?d.slice(0,4)+' '+d.slice(4,8):d});
+function say(x,ok){m.textContent=x;m.className='msg '+(ok?'ok':'err')}
+f.addEventListener('submit',function(e){e.preventDefault();var d=tel.value.replace(/\D/g,'');if(d.length===11&&d.indexOf('506')===0)d=d.slice(3);
+if(!/^[5-8][0-9]{7}$/.test(d)){say(en()?'Enter an 8-digit WhatsApp number, for example 8888 8888.':'Escribe un número de WhatsApp de 8 dígitos, por ejemplo 8888 8888.',false);tel.focus();return}
+if(hp.value||Date.now()-t0<1500){done();return}
+b.disabled=true;say(en()?'Sending...':'Enviando...',true);
+Promise.resolve({ok:true})/* /pruebas: envio simulado, no se guarda ningun numero */
+.then(function(r){if(!r.ok)throw 0;try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:'novedades-enviado',title:'novedades-enviado',event:true})}catch(_){}done()})
+.catch(function(){b.disabled=false;say(en()?'We could not save your number. Please try again in a moment.':'No pudimos guardar tu número. Inténtalo de nuevo en un momento.',false)})});
+function done(){f.classList.add('hecho');say(en()?'Done. We will message you on WhatsApp.':'Listo. Te avisaremos por WhatsApp.',true)}})();
+</script>
+</body>
 </html>
