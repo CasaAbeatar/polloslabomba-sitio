@@ -53,19 +53,17 @@
 .pg .t b{background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.95) 50%,transparent 58%) 160% 0/260% 100% no-repeat,linear-gradient(#171212,#171212);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:heat 2.6s ease-in-out 1.4s infinite alternate,shine 6s ease-in-out 2s infinite}
 @keyframes shine{0%,55%{background-position:160% 0,0 0}85%,100%{background-position:-60% 0,0 0}}
 html{height:100%}body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto;flex-direction:column;gap:20px;padding:0 0 28px}
-.nov{width:min(460px,92vw);display:flex;flex-direction:column;gap:8px;text-align:center;font-family:'Figtree',system-ui,sans-serif;color:#171212}
-.nov label{font-weight:800;font-size:19px;color:#B81622}
-.nov .row{display:flex;gap:8px;align-items:stretch}
-.nov .pre{display:inline-flex;align-items:center;padding:0 12px;background:rgba(23,18,18,.14);border-radius:12px;font-weight:700}
-.nov input[type=tel]{flex:1;min-width:0;min-height:48px;border-radius:12px;border:2px solid #171212;padding:0 14px;font:700 18px 'Figtree',system-ui,sans-serif;color:#171212;background:#FFF6E0}
-.nov button{min-height:48px;padding:0 16px;border:0;border-radius:12px;background:#B81622;color:#fff;font:800 16px 'Figtree',system-ui,sans-serif;cursor:pointer}
+.nov{width:min(300px,88vw);display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;font-family:'Figtree',system-ui,sans-serif;color:#171212;margin:0 auto}
+.nov label{font-weight:800;font-size:15px;color:#B81622}
+.nov .row{display:flex;gap:6px;align-items:stretch;width:100%;justify-content:center}
+.nov input[type=tel]{flex:1 1 0;min-width:0;width:0;min-height:42px;border-radius:10px;border:2px solid #171212;padding:0 10px;font:700 16px 'Figtree',system-ui,sans-serif;color:#171212;background:#FFF6E0;text-align:center}
+.nov button{flex:none;min-height:42px;padding:0 14px;border:0;border-radius:10px;background:#B81622;color:#fff;font:800 14px 'Figtree',system-ui,sans-serif;cursor:pointer;white-space:nowrap}
 .nov button:disabled{opacity:.6;cursor:default}
 .nov .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.nov .msg{min-height:1.4em;margin:0;font-weight:700;font-size:15px}.nov .msg.err{color:#8f1019}
-.nov .fine{margin:0;font-size:13px;line-height:1.45}.nov .fine a{color:#171212}
+.nov .msg{min-height:0;margin:0;font-weight:700;font-size:14px}.nov .msg:empty{display:none}.nov .msg.err{color:#8f1019}
+.nov .fine{margin:0;font-size:12px;line-height:1.4}.nov .fine a{color:#171212}
 .nov.hecho .row,.nov.hecho label,.nov.hecho .fine{display:none}.nov.hecho .msg{font-size:20px;color:#B81622}
-@media(max-width:420px){.nov .row{flex-wrap:wrap}.nov .pre{display:none}.nov button{flex:1 1 100%}}
-@media(min-aspect-ratio:1/1){body{flex-direction:row;gap:4vw;padding:0}.pg{width:min(58vw,calc(100dvh*.8))}.nov{width:min(380px,34vw)}}
+@media(min-aspect-ratio:1/1){body{flex-direction:row;gap:4vw;padding:0}.pg{width:min(58vw,calc(100dvh*.8))}.nov{width:min(300px,30vw)}}
 </style>
 </head>
 <body>
